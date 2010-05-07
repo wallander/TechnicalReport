@@ -1,0 +1,94 @@
+\chapter{Discussion}
+%----------------------------------------------------------
+\section{Concept}
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Maze versus path}
+
+The first design problem we faced was how to make the path. We could either make a game with a predetermined path or having the mobs choose their own closest path to the finish. We had during the testing of different games tested Robo Defence(Lupid Labs for Android. This a TD that had no static path, but instead you create the path when you build your towers. This allows you to experiment with different paths to find the best one, like a maze. If we use the static path the user cannot control which way the mobs will go.
+
+The benefits with a static path is that the game is easier to play, you do not have to think about how the mobs will move based on how you build your towers. The game will look more attractive with a path drawn on the map from the start. If you build your own path you have to have open spaces and the map might look empty and boring. Another drawback with a maze is that it is more complex and might scare new players away.
+
+The benefits with a maze is that it is more challenging. The game play is often different from player to player because the may build different mazes. The game also gets another dimension when you place cheep tower not to damage the mobs but to increase the length of the path. The flying mobs also complicates the strategy when they can fly over the towers and then not the path created by the player.
+
+When discussing and voting we decided to go for the static path design. Since we have never developed a game before we did not want to code a too complicated A.I. The static path design seemed to be the easiest to make and if we wanted to increase the complexity we had several ideas how to make the game more unique.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Theme}
+
+One of the bigger discussion subject in the group was what kind of theme the game should have.   Since no one in our group was really good at graphics we waited a long time with deciding the theme. At first we only had example pictures for testing the rest of the functionality of the game. We later changed this to a winter theme just for having a temporary theme that did not look too bad. Since we had not theme at the start we named our sub classes of towers and mobs based on their function, not their apperance.
+
+We agreed that the game should have a background story that the theme should be linked to. In the first real discussion we decided to go for a green house effect-theme. The base story would be that the animals of the north pole would flee from their melting environment. The map would then have different themes; like poluting factories, melting iceblocks and smog.
+
+We later changed this theme to a Eskimo theme. The background story was the same but instead of the green house effect the animals was migrating south just because they wanted to. The eskimos does not like this and therefore tries to stop them. The maps will then gradually become greener and greener when progressing thought the game. The towers should be different eskimos, a snowman and an igloo canon. The mobs is different animals like pingvins, ice bears and wallruses. 
+
+We also had a special ball that could be rolled over the map. This would be drawn out like a big snowball, rolling over the animals.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Unique features}
+
+We wanted to make our game stand out from other Tower Defences to make it more desirable. Modern Android phones offer many new ways to controll your phone which we wanted to take advantage of. The idea we had was that we wanted to add an extra dimension to the game using the phones accelerometer. One of the ideas was to control the towers by tilting the phone. Another idea was that the player should be able to controll the range of the towers. If the player tilts the phone to the left, the towers range will increase in that direction. Another idea was to control the speed of the mobs. When tilting to the left, it would create a slop to the left making the mobs moving left go faster and mobs moving right slower. 
+
+We also had an idea to make the path slips into to paths. We have not seen any other games that has multiple paths for the mobs so this would be an easy feature to implement that would make it more unique. We also thought of letting the user control with way the mobs go in a crossroad using the accelerometer. The more you tilt in one direction, the higher is the probability that the mobs go that way.
+
+The idea that we actually implemented was that of a snowball. The snowball will roll over the map controlled by tilting the phone, almost like the classical board game Labyrinth. In It is a bonus that will be given to the player from time to time while playing. The player can use this snowball to kill mobs when in difficult situations. We had some discussion how the snowball would interact with the units on the map. Firstly we had it kill every mob it touched. This was the easiest was to code it but it made the snowball too good, especially against bosses who had much more health than other mobs. We later changed this so it would take a percentage of the mobs health every frame it touched it. We also set the snowball to take a less percentage on bosses to make it more balanced compared to normal mobs. The downside of this approach is that the snowball takes less and less damage of one mob while currently on it. This is because it takes a percentage of the mobs current damage. When the mob has high health the snowball inflicts high damage and when it's health is low it inflicts low damage. This makes the snowball more effective against healthy mobs which can be quite confusing for the player.
+
+We also had a discussion if the snowball should have any negative aspect to make it harder to use. One idea was to have the snowball not only damage the mobs but also the towers. This combined with a more powerful snowball would make it both effective in hard situations but also a risk. The problem with this is that the player then could place the snowball on the path and without tilting the phone killing the mobs very effective. This would discourage the user from tilting the phone and use the snowball as it was intended. This is also a problem even without the snowball killing the towers but then the snowball would be balanced to take less damage.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Waves}
+
+A big issue was how the waves was supposed to work. In other TD games like Bloons and Element TD the game pauses between every wave, giving time for the user to build more towers.  Another way is to make the waves come continuously but with a delay between them. We decided to go for the delay approach. This to make the game flow better and to not have the player press a lot of times. Since we wanted to have a lot of waves this might be irritating for the player to always have to press a button before each wave.
+
+The negative aspect with this approach is that the mobs have different speed. This may result in that one wave catches up with an earlier wave. This is very noticeable for the boss waves. A boss wave consists of on mob with much more health than a normal mob.This results in that it takes more time to kill. Since there only is one mob on boss waves the countdown to the next wave start immediately after it is created. To solve this we simply increased the delay after slow boss waves.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{User interface}
+
+User interface is one of the most important areas when working with touchscreen mobile phones or small touchscreens in general. You want to include as much as possible on the screen but at the same time you can not make the items too small. Since you use your fingers to interact with the phone and some people might have bigger fingers then others. You have to implement enough big buttons to satisfy all users. 
+
+The way you play the game is in landscape mode, landscape mode is when you hold your phone in a 90 degree angle. The way you hold it, only leaves your thumbs to interact with. That means you are forced to make big buttons.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Graphics}
+
+Canvas vs Open GL
+Even if you can do 2D games with OpenGL too. The decision was made to to work with Canvas since there was to be no implementation of any 3D graphics in the game. Some of us was also familiar with the Canvas concept which even made it an easier choice. 
+
+\subsubsection{Animations}
+
+\subsubsection{Interface}
+
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Data storage}
+
+%----------------------------------------------------------
+
+%----------------------------------------------------------
+
+%----------------------------------------------------------
+\section{Game balance}
+
+One of our goals was to make a game that was fun game that would appeal to a customers market. Through our interviews We found that an attractive game should both be challenging and easy to learn. The interviewees also said that here would be good if one had to use different type of strategies for different situations. The should not one strategy or one tower that was best in all situations. To do this We had to balance the game so the towers had different abilities. The game difficulty should also increase in a good way. The first map should introduce the player to the game and not scare him away. The game should also provide a challenge and the player should not be able to finish it to easily. Our balancing mainly consisted of changing the following variables in the game.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Towers}
+
+The balancing of the towers was done to make sure that no tower was superior to another. If so the game would be boring if you could finish the game by only building on type of tower. Our idea was that the player needed to build different towers for different situations. This is one of the reasons for having different types of towers and mobs. Different maps contains different combinations of mob types and there for the user has to use an appropriate strategy.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Mob waves}
+
+The biggest part was the balancing of the mob waves. To make the game fun to play We had to test with some values, play through the game and see how easy it was. Each killed mob gives a specific amount of money. To make the game balanced the income of money should be similar to the cost of building towers to defend yourself. If you get to much money the game would not be challenging and if you get to little money it would be impossible to finish.
+
+Since the maps should have different difficulty We had to manually set the health of the waves for each map. The waves of the first map should be easier than the waves of the second map and so on. 
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Snowball}
+
+The player get one snowball for each 4000 points that is collected. The reason for the amount of points (4000) is that you normally get around 10000-15000 points on a map. We did not want the user to get the snowball to often an 2-3 times per map sounded good.
+
+
+The damage of the snowball was also up for discussion. We first had the snowball kill the mobs instantly but later changed this so it killed 8\% and the mobs current health each frame. This resulted in a snowball that was good balanced. The snowball was also modified to take a less percent for each frame for the bosses. This because the bosses have around 15 times more health than normal mobs. If the snowball would take the standard percentage from the bosses the snowball would be unnaturally good for bosses.
+%----------------------------------------------------------

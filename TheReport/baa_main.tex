@@ -1,0 +1,97 @@
+\input{chapters/header}
+
+\definecolor{lightblue}{rgb}{0.8,0.85,1}
+\lstset{backgroundcolor=\color{lightblue}}
+
+\begin{document}
+
+\nocite{*}
+
+%-------------------------------------------------
+%- Title page
+%-------------------------------------------------
+\input{chapters/titlepage}
+%-------------------------------------------------
+
+\pagenumbering{roman}
+%for 1.5 spacing:
+%\renewcommand{\baselinestretch}{1.50}\normalsize
+
+%-------------------------------------------------
+%- Abstract
+%-------------------------------------------------
+\input{chapters/abstract}
+\newpage
+
+%-------------------------------------------------
+%- Acknowledgements
+%-------------------------------------------------
+
+\newpage
+
+%-------------------------------------------------
+%- Declaration
+%-------------------------------------------------
+%\addcontentsline{toc}{chapter}{Declaration}
+\section*{Declaration}
+
+We declare that this thesis was composed by ourselves, that the work contained herein is our own
+except where explicitly stated otherwise in the text, and that this work has not been submitted
+for any other degree or professional qualification except as specified.
+    \vspace{3em}
+    \\
+    Göteborg, \today \ \ \ \underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\\
+    \hspace*{12em}\small{\ We will state our names here later...}
+    
+\newpage
+
+%-------------------------------------------------
+%- Table of contents
+%-------------------------------------------------
+\tableofcontents
+
+\newpage
+
+%\listoftables
+%\newpage
+
+%-------------------------------------------------
+%- Content
+%-------------------------------------------------
+\newpage
+\pagenumbering{arabic}
+%-------------------------------------
+%- Chapter 1
+%-------------------------------------
+\input{chapters/Chapter1/introduction}
+%-------------------------------------
+%- Chapter 2
+%-------------------------------------
+\input{chapters/Chapter2/theory}
+%-------------------------------------
+%- Chapter 3
+%-------------------------------------
+\input{chapters/Chapter3/method}
+%-------------------------------------
+%- Chapter 4
+%-------------------------------------
+\input{chapters/Chapter4/results}
+%-------------------------------------
+%- Chapter 5
+%-------------------------------------
+\input{chapters/Chapter5/conclusions}
+%-------------------------------------
+%- Chapter 6
+%-------------------------------------
+\input{chapters/Chapter6/discussion}
+%-------------------------------------
+%- Chapter 7
+%-------------------------------------
+\input{chapters/Chapter7/futurework}
+%-------------------------------------
+
+\listoffigures
+
+%APPENDIX
+
+\input{chapters/footer} 
