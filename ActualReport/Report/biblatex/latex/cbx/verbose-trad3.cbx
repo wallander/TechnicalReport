@@ -1,0 +1,89 @@
+% $Id: verbose-trad3.cbx,v 0.9 2010/02/14 15:42:33 lehman beta $
+
+\ProvidesFile{verbose-trad3.cbx}
+[\abx@cbxid $Id: verbose-trad3.cbx,v 0.9 2010/02/14 15:42:33 lehman beta $]
+
+\ExecuteBibliographyOptions{citetracker=context,ibidtracker=constrict,
+                            loccittracker=constrict,autocite=footnote}
+\providecommand*{\mkibid}[1]{#1}
+\newbool{cbx:ibid}
+
+\DeclareBibliographyOption{strict}[true]{%
+  \ifstrequal{#1}{true}
+    {\ExecuteBibliographyOptions{ibidtracker=constrict,loccittracker=constrict}}
+    {\ExecuteBibliographyOptions{ibidtracker=context,loccittracker=context}}}
+
+\newbibmacro*{cite}{%
+  \global\boolfalse{cbx:ibid}%
+  \ifciteseen
+    {\ifciteibid
+       {\ifloccit
+	  {\usebibmacro{cite:ibid}}
+	  {\iffieldundef{shorthand}
+	     {\usebibmacro{cite:opcit}}
+	     {\usebibmacro{cite:shorthand}}}}
+       {\iffieldundef{shorthand}
+	  {\usebibmacro{cite:short}}
+	  {\usebibmacro{cite:shorthand}}}}
+    {\usebibmacro{cite:full}}}
+
+\newbibmacro*{cite:full}{%
+  \printtext[bibhypertarget]{%
+    \usedriver
+      {\DeclareNameAlias{sortname}{default}}
+      {\thefield{entrytype}}}%
+  \usebibmacro{shorthandintro}}
+
+\newbibmacro*{cite:short}{%
+  \printnames{labelname}%
+  \setunit*{\addcomma\space}%
+  \printtext[bibhyperlink]{%
+    \printfield[citetitle]{labeltitle}}}
+
+\newbibmacro*{cite:opcit}{%
+  \printnames{labelname}%
+  \setunit*{\addcomma\space}%
+  \printtext[bibhyperlink]{%
+    \bibstring[\mkibid]{opcit}}}
+
+\newbibmacro*{cite:ibid}{%
+  \printtext[bibhyperlink]{\bibstring[\mkibid]{ibidem}}%
+  \global\booltrue{cbx:ibid}}
+
+\newbibmacro*{cite:shorthand}{%
+  \printtext[bibhyperlink]{\printfield{shorthand}}}
+
+\newbibmacro*{cite:postnote}{%
+  \ifbool{cbx:ibid}
+    {}
+    {\usebibmacro{postnote}}}
+
+\DeclareCiteCommand{\cite}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{cite:postnote}}
+
+\DeclareCiteCommand{\parencite}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{cite:postnote}}
+
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{cite:postnote}}
+
+\DeclareCiteCommand{\footcitetext}[\mkbibfootnotetext]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{cite:postnote}}
+
+\endinput

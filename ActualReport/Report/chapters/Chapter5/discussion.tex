@@ -1,0 +1,127 @@
+\chapter{Discussion}
+%----------------------------------------------------------
+\section{Design choices}
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Fixed path versus maze building}
+
+The first important design decision that had to be taken was to decide the movement pattern of the mobs. The Tower Defense genre is divided into two distinctive groups when it comes to mob movement over the map: fixed path or maze building. With a fixed path the mobs move along a pre-defined route on the track and towers can be built along the sides. Maze building games on the other hand, consist of an open field where the mobs can move freely. It is up to the player to build obstacles forcing them to take detours towards the exit. The obstacles that are used are in most cases the towers themselves. 
+
+While testing different games during the research stage of development, one of the tested games was Robo Defence (Lupid Labs, 2010) for Android which featured maze-style gameplay. Robo Defence is one of the most popular Tower Defense games currently on the app-market, distinguishing the game from from this popular alternative was one big factor in deciding upon the fixed path design.
+
+There are many benefits with the fixed path model. Using a fixed path makes the game less complex to the player. It is more forgiving when it comes to the placement of towers: maze building games can get frustrating if the control is imprecise, because a tower in the wrong place might destroy the entire maze. Another benefit is that it gives the level designer more control over the tracks, making it easier to vary track design by varying the path.
+
+Another reason for using the fixed path solution was that none of the team members had much prior experience of game development. For this reason it was decided to keep the complexity at a minimum. The maze building solution would imply the use of artificial intelligence which would be too time consuming, because of the increase in complexity. The static path design seemed to be the least complicated to use when developing a game for the first time. To assure a unique gameplay the focus was instead directed to other implementations, such as the snowball.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Theme}
+
+One of the major subjects of discussion in the group was deciding the theme of the game. Since no one in the team had any graphical experience the theme was decided late in the project. At first, placeholders were used to test the functionality of the game. This was later changed to a temporary theme to get started with the graphics. 
+
+It was decided that the game should have a background story that the theme should be linked to. In an early discussion, a green house effect-theme was discussed. The story would then be that animals from the north pole would flee from their melting environment. A map with that story would then have different themes, for instance polluting factories, melting ice caps and smog.
+
+Finally it was decided to use an Eskimo theme. The background story was the same but instead of the green-house effect the animals were migrating south because they desired to move to a warmer climate. The Eskimo tribes frowns upon this since they depend on the wildlife for food and clothing. The tribes therefor set out to prevent this disaster from occuring. The maps will gradually become greener and warmer when progressing throughout the game. The towers were designed as different Eskimos, the snowman and the igloo canon. The mobs became animals such as penguins, polar bears and walruses. In addition to the standard units of a Tower Defense one new special unit is implemented; the snowball. The snowball is a powerful unit which rolls around the screen to run over the mobs as the player tilts the phone.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Projectile algorithm}
+
+%- CODE SNIPPET HERE
+
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Waves}
+
+A big issue was how the waves were supposed to work. In other Tower Defense games like Bloons and Element Tower Defense the game pauses between every wave, giving time for the user to build more towers. Another way is to make the waves come continuously but with a delay between them. It was decided to use the delay approach. This to ensure that the game flows better and to remove unnecessary actions. Since the tracks feature lot of waves this might be irritating for the player to always have to press a button between each wave.
+
+Since the mobs have varying speed, this may result in having one wave catch up with the previous wave. This is very noticeable during the boss waves. A boss wave consists of one mob with alot more health than a normal mob taking a more considerable effort to kill. Since there only is one mob on boss waves, the countdown until the next wave starts immediately after it is created. To solve this we simply increased the delay after slow boss waves.
+%----------------------------------------------------------
+\section{Concept}
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Unique features}
+
+The development of the game called for distinguishing it from other Tower Defense games to make it more desirable for potential customers. Modern Android phones offer many new ways to control applications which could be taken advantage of. The idea was to add an extra dimension to the game using the phones accelerometer. One of the ideas was to control the towers by tilting the phone. Another idea was that the player should be able to control the range of the towers. If the player tilts the phone to the left, the towers range will increase in that direction. Another idea was to control the speed of the mobs. When tilting to the left, it would create a slop to the left making the mobs moving left go faster and mobs moving right slower. 
+
+Studies did not find any other games that has multiple paths for the mobs so this would be an easy feature to implement that would make it more unique. Another thought was letting the user control which way the mobs go in a crossroad using the accelerometer. The more the phone is tilted in one direction, the higher the probability is, that the mobs choose that way.
+
+The idea that was actually implemented was that of a snowball. The snowball will roll over the map controlled by tilting the phone, almost like the classical board game Labyrinth. The player can use this snowball to kill mobs when in difficult situations. Some discussion was had regarding how the snowball would interact with the units on the map. Initially it was designed to kill every mob it touched. This was the easiest way to code it but it made the snowball too good, especially against bosses who had much more health than other mobs. Later, this was changed to dealing damage based on a percentage of the mobs health every frame it touched them. The snowball was also modified to deal less damage to bosses in order to make it more balanced compared to normal mobs. 
+
+There was also a discussion whether the snowball should have any negative aspect to make it harder to use. One idea was to have the snowball not only damage the mobs but also the towers. This combined with a more powerful snowball would make it both effective in hard situations but also a risk. The problem with this is that the player then could place the snowball on the path and without tilting the phone killing the mobs very effective. This would discourage the user from tilting the phone and use the snowball as it was intended. This is also a problem even without the snowball killing the towers but then the snowball would be balanced to take less damage.
+
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{User interface}
+
+User interface is one of the most important areas when working with touchscreen mobile phones or small touch-screens in general. The small screen needs to hold a lot of information. But,  since the touch-screen is operated with the user\'s fingers, and some people might have bigger fingers than others, it is important that items are not too small. This can make the player irritated when trying to hit the buttons. You do not want to make them too big either which can result in leaving a cluttered interface.  
+
+You want to fit as much as you can but you also want to keep it clean for the user. There were many discussions about which buttons would be the most important for the player during the different states of the game. To keep it clean, pressing a button often brings up a menu with several options to choose from.
+
+The game is played with the screen in landscape position, meaning that most users will only use his thumbs to interact. This means that the buttons must be even bigger compared to if the index finger would have been used.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Animations}
+
+Animations was not the main priority during the development. At first, the development was focused on having a working game with innovative features. During testing, it became clear that a game with no animations would be pretty boring. To give the player a good experience the game needed a more realistic feeling. The interviews also revealed that sounds and animations were positive for the game experience. Therefor animations were added to the mobs, which makes them look like they are wobbling back and forth when they are walking down the path. This small change made the game look much more dynamic. There is also an animation at the end of the path where the mobs dive into the water. 
+%----------------------------------------------------------
+%----------------------------------------------------------
+\section{Game balance}
+
+For a game to be interesting and thus sellable, it must provide just enough challange to the user. In strategic games like Tower Defense it is also important that there is room for different types of strategies. Both of these requirements are achieved by balancing the game. This section describes how the different parts of the game were balanced and why.
+
+\subsection{Towers}
+
+Balancing of the towers was done to make sure that no tower was superior to the others. Being able to finish the game by only building one type of tower would make the game boring and unchallenging. The idea was that the player needed to build different towers for different situations. This is one of the reasons for having different types of towers and mobs. Different maps contains different combinations of mob types means the user has to change his strategy to meet the challenges he faces.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Mob waves}
+
+The biggest part was balancing of mob waves. Each mob killed awards the player with money. To make the game balanced, the income should be similar to the cost of building towers. If too much money was rewarded the game would not be challenging and if the reward was too small it would be impossible to finish.
+
+Since the maps have different difficulty we had to manually set the health of the waves for each map. The waves of the first map should be easier than the waves of the second map and so on. 
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Snowball}
+
+The player get one snowball for each 4000 points that is collected. The reason for this amount is that a game normally results in a total of around 10 000 to 15 000 points. This is done to limit the amount of times the user has access to the snowball, and two to three times per map recieved good feedback in testing.
+
+The damage of the snowball was also up for discussion. At first, the snowball killed the mobs instantly. This was later changed to deal damage equal to 8\% of the current health of the mob, each frame. The snowball was also modified to do less damage for each frame it spent on bosses. This because they have around 15 times more health than normal mobs. If the snowball would deal the same amount of damange to the bosses, the snowball would be too powerful.
+%----------------------------------------------------------
+\section{Insight} %- Temporary headline
+
+Text...
+%----------------------------------------------------------
+%----------------------------------------------------------
+\section{Future work}
+
+The game that resulted from this project is playable in its current state. However, additional features could be added to increase the value of the game. It is also an excellent basis from which a commercial game can be built. This chapter includes several implementations that were thought of but never realized are discussed.
+
+\subsection{Public highscore}
+
+To make the game more attractive and addictive, which was one of the purposes of the project, a public highscore could have been implemented. This would allow the users to play not only to complete the game, but also to compete against others by trying to beat their highscores. A server was needed to be able to upload and store the users scores. This was considered to take too much time and was not that important for the total game experience, therefore not implemented.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Fixed frame rate}
+
+If the game was ever to have a public highscore, the game need to be fair. If the game is run faster on phones with faster processors it would not be fair. Then the players with slower phones would have an advantage towards the rest of the players. To solve this the game has to run in the same speed independent of the speed of the phones processor. There is also a problem with future phones with superior processor speed. These phones would run the game so fast it would be very hard for users to play it. There are a number of well-known methods available to achieve this effect. These were excluded from this project in favor of adding features that more directly affect the game experience. This issue is one of the highest prioritised of future work. 
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Sounds}
+
+In the current version of the game the only sounds included are the background music and a sound effect when the mobs reaches the water. According to our last interviews many people wanted sound effects when the mobs were killed. This would according to them increase the addicting factors of the game. Implementing more sound effects was planed but there was no time to add this for all the situations in the game.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Achievments}
+
+Another thing that might increase the game's lifespan is achievements. This is a form of extra bonuses given to the player for completing predetermined tasks. Completing these achievements would unlock new functionalities or new maps. These achievements could be relatively hard to complete. They would also give the user something to strive against after completing all the standard maps in the game.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{Snowball improvement}
+
+The snowball is one of the main parts that separates us from other Tower Defence games. To further improve the game experience, it is very important that this special weapon is fun and easy to use. If it is not implemented good the player might not use it. He would then miss out of one of the things that makes the game unique. Further development of the snowball is therefore a important part to focus on.
+
+Since the snowball is never introduced properly, new players might not notice it exists. The snowball is one of the more unique parts of the game and it would be very bad if the player never uses it. A message or sound that indicate that the snowball is available would be helpful. The way the snowball is implemented could also be improved. It could for example bounce or even damage towers on the map to make it more challenging to use. The graphics for the snowball could also be improved. Now the snowball is able to roll over the water. One suggestion was that is should be sink or melt faster in the water. Instead of killing the mobs, there was an idea to have the snowball stun the mobs. This would stop them from walking for a moment so the towers had more time to shoot them.
+%----------------------------------------------------------
+%----------------------------------------------------------
+\subsection{More bonus weapons}
+
+One of the unique parts of our game is the snowball which is controlled by the tilt of the phone. An addition to the game could be to extend this idea to more player controllable weapons. A weapon that would daze or stun the mobs momentary was discussed. This could be graphically represented as an earthquake for example.  The idea of a snowball falling down from the sky was also discussed. All these ideas would further make our game more unique and stand out from competition on Android Market.

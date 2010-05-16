@@ -1,0 +1,148 @@
+% $Id: verbose-inote.cbx,v 0.9 2010/02/14 15:42:33 lehman beta $
+
+\ProvidesFile{verbose-inote.cbx}
+[\abx@cbxid $Id: verbose-inote.cbx,v 0.9 2010/02/14 15:42:33 lehman beta $]
+
+\ExecuteBibliographyOptions{citetracker=context,ibidtracker=constrict,
+                            singletitle,pagetracker,autocite=footnote}
+\providecommand*{\mkibid}[1]{#1}
+\newbool{cbx:loccit}
+\newbool{cbx:pageref}
+
+\DeclareFieldFormat{bibhyperlink}{%
+  \bibhyperlink{\thefield{entrykey}:\csuse{cbx@\iffootnote{f}{t}@\thefield{entrykey}}}{#1}}
+\DeclareFieldFormat{bibhypertarget}{%
+  \bibhypertarget{\thefield{entrykey}:\the\value{instcount}}{#1}}
+
+\DeclareBibliographyOption{ibidpage}[true]{%
+  \ifstrequal{#1}{true}
+    {\ExecuteBibliographyOptions{loccittracker=constrict}}
+    {\ExecuteBibliographyOptions{loccittracker=false}}}
+\DeclareBibliographyOption{pageref}[true]{%
+  \setbool{cbx:pageref}{#1}}
+
+\newbibmacro*{cite}{%
+  \global\boolfalse{cbx:loccit}%
+  \ifciteseen
+    {\iffieldundef{shorthand}
+       {\ifthenelse{\ifciteibid\AND\NOT\iffirstonpage}
+          {\usebibmacro{cite:ibid}}
+          {\usebibmacro{cite:short}}}
+       {\usebibmacro{cite:shorthand}}}
+    {\usebibmacro{cite:full}%
+     \usebibmacro{cite:save}}}
+
+\newbibmacro*{cite:save}{%
+  \csxdef{cbx@t@\thefield{entrykey}}{\the\value{instcount}}}
+
+\newbibmacro*{cite:full}{%
+  \printtext[bibhypertarget]{%
+    \usedriver
+      {\DeclareNameAlias{sortname}{default}}
+      {\thefield{entrytype}}}%
+  \usebibmacro{shorthandintro}}
+
+\newbibmacro*{cite:short}{%
+  \printnames{labelname}%
+  \setunit*{\addcomma\space}%
+  \printtext[bibhyperlink]{%
+    \printfield[citetitle]{labeltitle}}}
+
+\newbibmacro*{cite:shorthand}{%
+  \printtext[bibhyperlink]{\printfield{shorthand}}}
+
+\newbibmacro*{cite:ibid}{%
+  \printtext[bibhyperlink]{\bibstring[\mkibid]{ibidem}}%
+  \ifloccit
+    {\global\booltrue{cbx:loccit}}
+    {}}
+
+\newbibmacro*{footcite}{%
+  \global\boolfalse{cbx:loccit}%
+  \ifciteseen
+    {\iffieldundef{shorthand}
+       {\ifthenelse{\ifciteibid\AND\NOT\iffirstonpage}
+          {\usebibmacro{footcite:ibid}}
+          {\usebibmacro{footcite:note}}}
+       {\usebibmacro{footcite:shorthand}}}
+    {\usebibmacro{footcite:full}%
+     \usebibmacro{footcite:save}}}
+
+\newbibmacro*{footcite:save}{%
+  \csxdef{cbx@f@\thefield{entrykey}}{\the\value{instcount}}%
+  \label{cbx@\the\value{instcount}}}
+
+\newbibmacro*{footcite:full}{%
+  \printtext[bibhypertarget]{%
+    \usedriver
+      {\DeclareNameAlias{sortname}{default}}
+      {\thefield{entrytype}}}%
+  \usebibmacro{shorthandintro}}
+
+\newbibmacro*{cite:postnote}{%
+  \ifbool{cbx:loccit}
+    {}
+    {\usebibmacro{postnote}}}
+
+\newbibmacro*{footcite:note}{%
+  \ifnameundef{labelname}
+    {\printfield{label}}
+    {\printnames{labelname}}%
+  \ifsingletitle
+    {}
+    {\setunit*{\addcomma\space}%
+     \printfield[title]{labeltitle}}%
+  \setunit*{\addcomma\space}%
+  \printtext{%
+    \bibstring{seenote}\addnbspace
+    \ref{cbx@\csuse{cbx@f@\thefield{entrykey}}}%
+    \ifbool{cbx:pageref}
+      {\ifsamepage{\the\value{instcount}}
+                  {\csuse{cbx@f@\thefield{entrykey}}}
+         {}
+	 {\addcomma\space\bibstring{page}\addnbspace
+	  \pageref{cbx@\csuse{cbx@f@\thefield{entrykey}}}}}
+      {}}}
+
+\newbibmacro*{footcite:shorthand}{%
+  \printtext[bibhyperlink]{\printfield{shorthand}}}
+
+\newbibmacro*{footcite:ibid}{%
+  \printtext[bibhyperlink]{\bibstring[\mkibid]{ibidem}}%
+  \ifloccit
+    {\global\booltrue{cbx:loccit}}
+    {}}
+
+\DeclareCiteCommand{\cite}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \iffootnote
+     {\usebibmacro{footcite}}
+     {\usebibmacro{cite}}}
+  {\multicitedelim}
+  {\usebibmacro{cite:postnote}}
+
+\DeclareCiteCommand{\parencite}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \iffootnote
+     {\usebibmacro{footcite}}
+     {\usebibmacro{cite}}}
+  {\multicitedelim}
+  {\usebibmacro{cite:postnote}}
+
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{footcite}}
+  {\multicitedelim}
+  {\usebibmacro{cite:postnote}}
+
+\DeclareCiteCommand{\footcitetext}[\mkbibfootnotetext]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{footcite}}
+  {\multicitedelim}
+  {\usebibmacro{cite:postnote}}
+
+\endinput

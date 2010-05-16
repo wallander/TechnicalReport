@@ -1,0 +1,356 @@
+% $Id: dutch.lbx,v 0.9a 2010/03/19 19:52:15 lehman beta $
+
+\ProvidesFile{dutch.lbx}
+[\abx@lbxid $Id: dutch.lbx,v 0.9a 2010/03/19 19:52:15 lehman beta $]
+
+% STATUS OF THIS FILE
+% * incomplete
+% * translations by native speaker
+% * peer review pending
+
+\DeclareBibliographyExtras{%
+  \protected\def\bibrangedash{-}%
+  \protected\def\bibdatedash{\bibrangedash}% FIXME: unsure
+  \let\finalandcomma=\empty
+  \protected\def\mkbibordinal#1{\stripzeros{#1}e}%
+  \protected\def\mkbibmascord{\mkbibordinal}%
+  \protected\def\mkbibfemord{\mkbibordinal}%
+  \protected\def\mkbibdatelong#1#2#3{%
+    \iffieldundef{#3}
+      {}
+      {\stripzeros{\thefield{#3}}%
+       \iffieldundef{#2}{}{\nobreakspace}}%
+    \iffieldundef{#2}
+      {}
+      {\mkbibmonth{\thefield{#2}}%
+       \iffieldundef{#1}{}{\space}}%
+    \thefield{#1}}%
+  \protected\def\mkbibdateshort#1#2#3{%
+    \iffieldundef{#3}
+      {}
+      {\mkdatezeros{\thefield{#3}}%
+       \iffieldundef{#2}{}{\mbox{-}}}%
+    \iffieldundef{#2}
+      {}
+      {\mkdatezeros{\thefield{#2}}%
+       \iffieldundef{#1}{}{\mbox{-}}}%
+    \thefield{#1}}%
+  \savecommand\mkbibrangeterse
+  \protected\def\mkbibrangeterse{%
+    \BibliographyWarning{%
+      Date format 'terse' not applicable to\MessageBreak
+      Spanish dates. Using format 'short' instead}%
+    \mkbibrangefull{short}}%
+}
+
+\UndeclareBibliographyExtras{%
+  \restorecommand\mkbibrangeterse
+}
+
+\DeclareBibliographyStrings{%
+  bibliography     = {{Bibliografie}{Bibliografie}},
+  references       = {{Referenties}{Referenties}},
+  shorthands       = {{Lijst van Afkortingen}{Afkortingen}},
+  editor           = {{redacteur}{red\adddot}},
+  editors          = {{redacteuren}{red\adddot}},
+  compiler         = {{compilator}{comp\adddot}},
+  compilers        = {{compilatoren}{comp\adddot}},
+  redactor         = {{redacteur}{red\adddot}},
+  redactors        = {{redacteuren}{red\adddot}},
+% founder          = {{}{}}, % FIXME: missing
+% founders         = {{}{}}, % FIXME: missing
+% continuator      = {{}{}}, % FIXME: missing
+% continuators     = {{}{}}, % FIXME: missing
+% collaborator     = {{}{}}, % FIXME: missing
+% collaborators    = {{}{}}, % FIXME: missing
+  translator       = {{vertaler}{vert\adddot}},
+  translators      = {{vertalers}{vert\adddot}},
+  commentator      = {{commentator}{comm\adddot}},
+  commentators     = {{commentatoren}{comm\adddot}},
+  annotator        = {{annotator}{annot\adddot}},
+  annotators       = {{annotatoren}{annot\adddot}},
+  commentary       = {{commentaar}{comm\adddot}},
+  annotations      = {{annotaties}{annot\adddot}},
+  introduction     = {{introduction}{intro\adddot}},
+  foreword         = {{voorwoord}{voorw\adddot}},
+  afterword        = {{nawoord}{naw\adddot}},
+% editortr         = {{}{}}, % FIXME: missing
+% editorstr        = {{}{}}, % FIXME: missing
+% editorco         = {{}{}}, % FIXME: missing
+% editorsco        = {{}{}}, % FIXME: missing
+% editoran         = {{}{}}, % FIXME: missing
+% editorsan        = {{}{}}, % FIXME: missing
+% editorin         = {{}{}}, % FIXME: missing
+% editorsin        = {{}{}}, % FIXME: missing
+% editorfo         = {{}{}}, % FIXME: missing
+% editorsfo        = {{}{}}, % FIXME: missing
+% editoraf         = {{}{}}, % FIXME: missing
+% editorsaf        = {{}{}}, % FIXME: missing
+% editortrco       = {{}{}}, % FIXME: missing
+% editorstrco      = {{}{}}, % FIXME: missing
+% editortran       = {{}{}}, % FIXME: missing
+% editorstran      = {{}{}}, % FIXME: missing
+% editortrin       = {{}{}}, % FIXME: missing
+% editorstrin      = {{}{}}, % FIXME: missing
+% editortrfo       = {{}{}}, % FIXME: missing
+% editorstrfo      = {{}{}}, % FIXME: missing
+% editortraf       = {{}{}}, % FIXME: missing
+% editorstraf      = {{}{}}, % FIXME: missing
+% editorcoin       = {{}{}}, % FIXME: missing
+% editorscoin      = {{}{}}, % FIXME: missing
+% editorcofo       = {{}{}}, % FIXME: missing
+% editorscofo      = {{}{}}, % FIXME: missing
+% editorcoaf       = {{}{}}, % FIXME: missing
+% editorscoaf      = {{}{}}, % FIXME: missing
+% editoranin       = {{}{}}, % FIXME: missing
+% editorsanin      = {{}{}}, % FIXME: missing
+% editoranfo       = {{}{}}, % FIXME: missing
+% editorsanfo      = {{}{}}, % FIXME: missing
+% editoranaf       = {{}{}}, % FIXME: missing
+% editorsanaf      = {{}{}}, % FIXME: missing
+% editortrcoin     = {{}{}}, % FIXME: missing
+% editorstrcoin    = {{}{}}, % FIXME: missing
+% editortrcofo     = {{}{}}, % FIXME: missing
+% editorstrcofo    = {{}{}}, % FIXME: missing
+% editortrcoaf     = {{}{}}, % FIXME: missing
+% editorstrcoaf    = {{}{}}, % FIXME: missing
+% editortranin     = {{}{}}, % FIXME: missing
+% editorstranin    = {{}{}}, % FIXME: missing
+% editortranfo     = {{}{}}, % FIXME: missing
+% editorstranfo    = {{}{}}, % FIXME: missing
+% editortranaf     = {{}{}}, % FIXME: missing
+% editorstranaf    = {{}{}}, % FIXME: missing
+% translatorco     = {{}{}}, % FIXME: missing
+% translatorsco    = {{}{}}, % FIXME: missing
+% translatoran     = {{}{}}, % FIXME: missing
+% translatorsan    = {{}{}}, % FIXME: missing
+% translatorin     = {{}{}}, % FIXME: missing
+% translatorsin    = {{}{}}, % FIXME: missing
+% translatorfo     = {{}{}}, % FIXME: missing
+% translatorsfo    = {{}{}}, % FIXME: missing
+% translatoraf     = {{}{}}, % FIXME: missing
+% translatorsaf    = {{}{}}, % FIXME: missing
+% translatorcoin   = {{}{}}, % FIXME: missing
+% translatorscoin  = {{}{}}, % FIXME: missing
+% translatorcofo   = {{}{}}, % FIXME: missing
+% translatorscofo  = {{}{}}, % FIXME: missing
+% translatorcoaf   = {{}{}}, % FIXME: missing
+% translatorscoaf  = {{}{}}, % FIXME: missing
+% translatoranin   = {{}{}}, % FIXME: missing
+% translatorsanin  = {{}{}}, % FIXME: missing
+% translatoranfo   = {{}{}}, % FIXME: missing
+% translatorsanfo  = {{}{}}, % FIXME: missing
+% translatoranaf   = {{}{}}, % FIXME: missing
+% translatorsanaf  = {{}{}}, % FIXME: missing
+  byauthor         = {{door}{door}},
+  byeditor         = {{geredigeerd door}{red\adddotspace door}},
+  bycompiler       = {{gecompileerd door}{comp\adddotspace door}},
+  byredactor       = {{geredigeerd door}{red\adddotspace door}},
+% byfounder        = {{}{}}, % FIXME: missing
+% bycontinuator    = {{}{}}, % FIXME: missing
+% bycollaborator   = {{}{}}, % FIXME: missing
+  bytranslator     = {{vertaald \lbx@fromlang\ door}{vert\adddot\ \lbx@fromlang\ door}},
+  bycommentator    = {{becommentari\"{e}erd door}{comm\adddot\ door}},
+  byannotator      = {{geannoteerd door}{annot\adddot\ door}},
+  withcommentator  = {{met een commentaar van}{met een comment\adddot\ van}},
+  withannotator    = {{met annotaties van}{met annot\adddot\ van}},
+  withintroduction = {{met een introductie van}{met een intro\adddot\ van}},
+  withforeword     = {{met een voorwoord van}{met een woorw\adddot\ van}},
+  withafterword    = {{met een nawoord van}{met een naw\adddot\ van}},
+  byeditortr       = {{geredigeerd en vertaald \lbx@fromlang\ door}%
+                      {red\adddotspace en vert\adddot\ \lbx@fromlang\ door}},
+  byeditorco       = {{geredigeerd en becommentari\"{e}erd door}%
+                      {red\adddotspace en comm\adddot\ door}},
+  byeditoran       = {{geredigeerd en geannoteerd door}%
+                      {red\adddotspace en annot\adddot\ door}},
+  byeditorin       = {{geredigeerd, met een introductie, van}%
+                      {red., met een introd., van}},
+  byeditorfo       = {{geredigeerd, met een voorwoord, van}%
+                      {red., met een voorw., van}},
+  byeditoraf       = {{geredigeerd, met een nawoord, van}%
+                      {red., met een naw., van}},
+  byeditortrco     = {{geredigeerd, vertaald \lbx@fromlang\ en becommentari\"{e}erd door}%
+                      {red., vert\adddot\ \lbx@fromlang\ en comm\adddot\ door}},
+  byeditortran     = {{geredigeerd, vertaald \lbx@fromlang\ en geannoteerd door}%
+                      {red., vert\adddot\ \lbx@fromlang\ en annot\adddot\ door}},
+  byeditortrin     = {{geredigeerd en vertaald \lbx@fromlang, met een introductie, door}%
+                      {red\adddotspace en vert. \lbx@fromlang, met een introd., door}},
+  byeditortrfo     = {{geredigeerd en vertaald \lbx@fromlang, met een voorwoord, door}%
+                      {red\adddotspace en vert. \lbx@fromlang, met een voorw., door}},
+  byeditortraf     = {{geredigeerd en vertaald \lbx@fromlang, met een nawoord, door}%
+                      {red\adddotspace en vert. \lbx@fromlang, met een naw., door}},
+  byeditorcoin     = {{geredigeerd en becommentari\"{e}erd, met een introductie, door}%
+                      {red\adddotspace en comm., met een introd., door}},
+  byeditorcofo     = {{geredigeerd en becommentari\"{e}erd, met een voorwoord, door}%
+                      {red\adddotspace en comm., met een voorw., door}},
+  byeditorcoaf     = {{geredigeerd en becommentari\"{e}erd, met een nawoord, door}%
+                      {red\adddotspace en comm., met een naw., door}},
+  byeditoranin     = {{geredigeerd en geannoteerd, met een introductie, door}%
+                      {red\adddotspace en annot., met een introd., door}},
+  byeditoranfo     = {{geredigeerd en geannoteerd, met een voorwoord, door}%
+                      {red\adddotspace en annot., met een voorw., door}},
+  byeditoranaf     = {{geredigeerd en geannoteerd, met een nawoord, door}%
+                      {red\adddotspace en annot., met een naw., door}},
+  byeditortrcoin   = {{geredigeerd, vertaald \lbx@fromlang\ en becommentari\"{e}erd, met een introductie, door}%
+                      {red., vert\adddot\ \lbx@fromlang\ en comm., met een introd., door}},
+  byeditortrcofo   = {{geredigeerd, vertaald \lbx@fromlang\ en becommentari\"{e}erd, met een voorwoord, door}%
+                      {red., vert\adddot\ \lbx@fromlang\ en comm., met een voorw., door}},
+  byeditortrcoaf   = {{geredigeerd, vertaald \lbx@fromlang\ en becommentari\"{e}erd, met een nawoord, door}%
+                      {red., vert\adddot\ \lbx@fromlang\ en comm., met een naw., door}},
+  byeditortranin   = {{geredigeerd, vertaald \lbx@fromlang\ en geannoteerd, met een introductie, door}%
+                      {red., vert\adddot\ \lbx@fromlang\ en annot., met een introd., door}},
+  byeditortranfo   = {{geredigeerd, vertaald \lbx@fromlang\ en geannoteerd, met een voorwoord, door}%
+                      {red., vert\adddot\ \lbx@fromlang\ en annot., met een voorw., door}},
+  byeditortranaf   = {{geredigeerd, vertaald \lbx@fromlang\ en geannoteerd, met een nawoord, door}%
+                      {red., vert\adddot\ \lbx@fromlang\ en annot., met een naw., door}},
+  bytranslatorco   = {{vertaald \lbx@fromlang\ en becommentari\"{e}erd door}%
+                      {vert\adddot\ \lbx@fromlang\ en comm\adddot\ door}},
+  bytranslatoran   = {{vertaald \lbx@fromlang\ en geannoteerd door}%
+                      {vert\adddot\ \lbx@fromlang\ en annot.\adddot\ door}},
+  bytranslatorin   = {{vertaald \lbx@fromlang, met een introductie, door}%
+                      {vert. \lbx@fromlang, met een introd., door}},
+  bytranslatorfo   = {{vertaald \lbx@fromlang, met een voorwoord, door}%
+                      {vert. \lbx@fromlang, met een voorw., door}},
+  bytranslatoraf   = {{vertaald \lbx@fromlang, met een nawoord, door}%
+                      {vert. \lbx@fromlang, met een naw., door}},
+  bytranslatorcoin = {{vertaald \lbx@fromlang\ en becommentari\"{e}erd, met een introd., door}%
+                      {vert\adddot\ \lbx@fromlang\ en comm., met een introd., door}},
+  bytranslatorcofo = {{vertaald \lbx@fromlang\ en becommentari\"{e}erd, met een voorwoord, door}%
+                      {vert\adddot\ \lbx@fromlang\ en comm., met een voorw., door}},
+  bytranslatorcoaf = {{vertaald \lbx@fromlang\ en becommentari\"{e}erd, met een nawoord, door}%
+                      {vert\adddot\ \lbx@fromlang\ en comm., met een naw., door}},
+  bytranslatoranin = {{vertaald \lbx@fromlang\ en geannoteerd, met een introd., door}%
+                      {vert\adddot\ \lbx@fromlang\ en annot., met een introd., door}},
+  bytranslatoranfo = {{vertaald \lbx@fromlang\ en geannoteerd, met een voorwoord, door}%
+                      {vert\adddot\ \lbx@fromlang\ en annot., met een voorw., door}},
+  bytranslatoranaf = {{vertaald \lbx@fromlang\ en geannoteerd, met een nawoord, door}%
+                      {vert\adddot\ \lbx@fromlang\ en annot., met een naw., door}},
+  and              = {{en}{en}},
+  andothers        = {{et\addabbrvspace al\adddot}{et\addabbrvspace al\adddot}},
+  andmore          = {{et\addabbrvspace al\adddot}{et\addabbrvspace al\adddot}},
+  volume           = {{deel}{deel}},
+  volumes          = {{delen}{delen}},
+  jourvol          = {{jaargang}{jrg\adddot}},
+  jourser          = {{serie}{ser\adddot}},
+  newseries        = {{nieuwe serie}{nieuwe ser\adddot}},
+  oldseries        = {{oude serie}{oude ser\adddot}},
+  edition          = {{editie}{ed\adddot}},
+  reprint          = {{herdruk}{herdr\adddot}},
+  reprintof        = {{herdruk van}{herdr\adddotspace van}},
+  reprintas        = {{herdrukt als}{herdr\adddotspace als}},
+  page             = {{pagina}{p\adddot}},   % FIXME: unsure
+  pages            = {{pagina's}{p\adddot}}, % FIXME: unsure
+  column           = {{kolom}{kol\adddot}},
+  columns          = {{kolommen}{kol\adddot}},
+  line             = {{regel}{r\adddot}},
+  lines            = {{regels}{r\adddot}},
+  verse            = {{vers}{v\adddot}},
+  verses           = {{verzen}{v\adddot}},
+  section          = {{sectie}{\S}},
+  sections         = {{secties}{\S}},
+  paragraph        = {{paragraaf}{par\adddot}},
+  paragraphs       = {{paragrafen}{par\adddot}},
+  in               = {{in}{in}},
+  inseries         = {{in}{in}},
+  ofseries         = {{van}{van}},
+  number           = {{nummer}{nr\adddot}},
+  chapter          = {{hoofdstuk}{hfdstk\adddot}},
+  mathesis         = {{masterscriptie}{masterscriptie}},
+  phdthesis        = {{proefschrift}{proefschrift}},
+  resreport        = {{onderzoeksrapport}{onderzoeks rap\adddot}},
+  techreport       = {{technisch rapport}{tech\adddotspace rap\adddot}},
+  software         = {{computer software}{comp\adddotspace software}},
+  datacd           = {{CD-ROM}{CD-ROM}},
+  audiocd          = {{audio CD}{audio CD}},
+  version          = {{versie}{versie}},
+  url              = {{addres}{addres}},
+  urlseen          = {{bezocht op}{bezocht op}},
+% inpress          = {{}{}}, % FIXME: missing
+% submitted        = {{}{}}, % FIXME: missing
+  citedas          = {{verder geciteerd als}{verder geciteerd als}},
+  seenote          = {{zie voetnoot}{zie v\adddot}},
+  quotedin         = {{geciteerd in}{cit\adddotspace in}},
+  idem             = {{idem}{idem}},
+  idemsm           = {{idem}{idem}},
+  idemsf           = {{eadem}{eadem}},
+  idemsn           = {{idem}{idem}},
+  idempm           = {{eidem}{eidem}},
+  idempf           = {{eaedem}{eaedem}},
+  idempn           = {{eadem}{eadem}},
+  idempp           = {{eidem}{eidem}},
+  ibidem           = {{ibidem}{ibid\adddot}},
+  opcit            = {{op\adddotspace cit\adddot}{op\adddotspace cit\adddot}},
+  loccit           = {{loc\adddotspace cit\adddot}{loc\adddotspace cit\adddot}},
+  confer           = {{cf\adddot}{cf\adddot}},
+  sequens          = {{sq\adddot}{sq\adddot}},
+  sequentes        = {{sqq\adddot}{sqq\adddot}},
+  passim           = {{passim}{pass\adddot}},
+  see              = {{zie}{zie}},
+  seealso          = {{zie ook}{zie ook}},
+  backrefpage      = {{zie pagina}{zie p\adddot}},   % FIXME: unsure
+  backrefpages     = {{zie pagina's}{zie p\adddot}}, % FIXME: unsure
+  january          = {{januari}{jan\adddot}},
+  february         = {{februari}{feb\adddot}},
+  march            = {{maart}{mar\adddot}},
+  april            = {{april}{apr\adddot}},
+  may              = {{mei}{mei}},
+  june             = {{juni}{juni}},
+  july             = {{juli}{juli}},
+  august           = {{augustus}{aug\adddot}},
+  september        = {{september}{sept\adddot}},
+  october          = {{oktober}{okt\adddot}},
+  november         = {{november}{nov\adddot}},
+  december         = {{december}{dec\adddot}},
+  langamerican     = {{Amerikaans}{Amerikaans}},
+% langbrazilian    = {{}{}}, % FIXME: missing
+  langdanish       = {{Deens}{Deens}},
+% langdutch        = {{}{}}, % FIXME: missing
+  langenglish      = {{Engels}{Engels}},
+  langfrench       = {{Frans}{Frans}},
+  langgerman       = {{Duits}{Duits}},
+  langgreek        = {{Grieks}{Grieks}},
+  langitalian      = {{Italiaans}{Italiaans}},
+  langlatin        = {{Latijn}{Latijn}},
+  langnorwegian    = {{Noors}{Noors}},
+% langportuguese   = {{}{}}, % FIXME: missing
+  langspanish      = {{Spaans}{Spaans}},
+  langswedish      = {{Zweeds}{Zweeds}},
+  fromamerican     = {{uit het Amerikaans}{uit het Amerikaans}},
+% frombrazilian    = {{}{}}, % FIXME: missing
+  fromdanish       = {{uit het Deens}{uit het Deens}},
+% fromdutch        = {{}{}}, % FIXME: missing
+  fromenglish      = {{uit het Engels}{uit het Engels}},
+  fromfrench       = {{uit het Frans}{uit het Frans}},
+  fromgerman       = {{uit het Duits}{uit het Duits}},
+  fromgreek        = {{uit het Grieks}{uit het Grieks}},
+  fromitalian      = {{uit het Italiaans}{uit het Italiaans}},
+  fromlatin        = {{uit het Latijn}{uit het Latijn}},
+  fromnorwegian    = {{uit het Noors}{uit het Noors}},
+% fromportuguese   = {{}{}}, % FIXME: missing
+  fromspanish      = {{uit het Spaans}{uit het Spaans}},
+  fromswedish      = {{uit het Zweeds}{uit het Zweeds}},
+  countryde        = {{Duitsland}{DE}},
+  countryeu        = {{Europese Unie}{EU}},
+  countryep        = {{Europese Unie}{EP}},
+  countryfr        = {{Frankrijk}{FR}},
+  countryuk        = {{Verenigd Koninkrijk}{VK}},
+  countryus        = {{Verenigde Staten van Amerika}{VS}},
+  patent           = {{patent}{pat\adddot}},
+  patentde         = {{Duits patent}{Duits pat\adddot}},
+  patenteu         = {{Europees patent}{Europees pat\adddot}},
+  patentfr         = {{Frans patent}{Frans pat\adddot}},
+  patentuk         = {{Brits patent}{Brits pat\adddot}},
+  patentus         = {{Amerikaans patent}{Amerikaans pat\adddot}},
+  patreq           = {{patent verzoek}{pat\adddot\ verz\adddot}},
+  patreqde         = {{Duits patent verzoek}{Duits pat\adddot\ verz\adddot}},
+  patreqeu         = {{Europees patent verzoek}{Europees pat\adddot\ verz\adddot}},
+  patreqfr         = {{Frans patent verzoek}{Frans pat\adddot\ verz\adddot}},
+  patrequk         = {{Brits patent verzoek}{Brits pat\adddot\ verz\adddot}},
+  patrequs         = {{Amerikaans patent verzoek}{Amerikaans pat\adddot\ verz\adddot}},
+  file             = {{bestand}{bestand}},
+  library          = {{bibliotheek}{bibliotheel}},
+  abstract         = {{samenvatting}{samenvatting}},
+  annotation       = {{annotaties}{annotaties}},
+}
+
+\endinput

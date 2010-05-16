@@ -1,0 +1,181 @@
+\section{Units}
+
+There are four different types of units in the game: mobs, towers, snowballs and projectiles. The mobs are walking down the path towards the ocean. The towers try to shoot the mobs to prevent them from reaching the ocean. The projectiles that the towers shoot are moving towards mobs, inflicting damage as they hit their target. The snowball is a special feature used for killing mobs. All these classes extend the class Unit. This class contains the methods and variables that are used by all these objects. A Unit object contains three instance variables that are set upon creation; a height, a width and a coordinate.
+
+Coordinate is a custom class created to store and manipulate the coordinates of a unit. It only keeps track of two instance variables; x-position and y-position. To make handling of coordinates easier, there is a method called getAngle() that returns the angle between two coordinates that are given as parameters.
+
+The method getDistance() returns the distance between two coordinates. The algorithm is the Pythagorean theorem and is implemented as follows:
+
+%----
+%- Code snippet getDistance
+%----
+\begin{figure}[htb]
+\begin{small}
+\verbatiminput{code/getDistance.java}
+\end{small}
+\caption{Caption}
+\label{fig:codeExGetDistance}
+\end{figure}
+%----
+
+\subsection{Towers}
+
+Tower is an abstract class, that is extended by the four different tower type classes. The Tower constructor takes a coordinate as argument. The rest of the properties of a tower are specific for each tower type and therefore not set by the Tower super class. 
+
+Some of the methods of the Tower class are abstract. These methods are implemented in the different subclasses. These methods are setImageByLevel(), getUpgradeCost(), shoot(), createProjectile() and upgrade(). 
+
+Since towers are stationary units, they have no method that updates their position. Instead, they have a method called tryToShoot() that is invoked everytime the updateModel() method in GameView is invoked. This method returns a new Projectile object if the tower is allowed to shoot. Towers are allowed to shoot if they are not on cooldown, and have a valid mob within their range. Some tower types have restrictions for what mob types they are allowed to target. When a tower creates a Projectile, the tower is automatically set on cooldown for a specific time.
+
+If the tower is allowed to shoot it calls the method shoot(). Basically, the shoot() method loops through all mobs on the map and checks which mobs are within shooting range. Mobs that have walked a longer distance on the path are prioritized higher when the tower chooses its target. The method then returns a projectile corresponding to the tower type, by invoking the createProjectile() method.
+
+Upgrading the towers is done by invoking the method upgrade(). Doing so alters the values of different attributes of the tower. The upgrade() method increases the variable keeping track of the level of the tower by one. It then uses this variable to fetch the new attributes from an array of predefined values, using the level number as index.
+
+\subsection{Mobs}
+
+Every mob is represented by an object of the Mob class. The implementation of mobs differ from that of towers in that there is only one class, instead of subclasses for each type. The mob type is set in the constructor, which is only invoked by MobFactory. The most important attributes of the Mob class follows:
+
+\begin{itemize}
+
+\item {\bf mMaxHealth:} The maximum health of the mob
+\item {\bf mHealth:} The current health of the mob. Never bigger then mMaxHealth
+\item {\bf mAngle:} The current angle towards the next checkpoint
+\item {\bf mSpeed:} The speed the mob moves over the map. Different speed for different types
+\item {\bf mRevard:} The mob type (NORMAL, AIR, FAST, IMMUNE or HEALTHY)
+\item {\bf mDistanceWalked:} Keeps track of how far the mob has walked. This is used to calculate highscore
+\item {\bf mobImage:} A reference for the image to be drawn on the map
+\item {\bf mPath:} The path the mob follows across the map
+\item {\bf mCheckpoint:} The index of the current checkpoint the mob is walking towards
+
+\end{itemize}
+
+Mob contains a method called updatePosition() which moves the mob according to its speed and its current angle. If the mob has reached its current checkpoint, the method first updates the angle of the mob, making it point towards the next checkpoint of the path. After doing so, it updates the mob's position.
+
+updatePosition() is invoked from updateModel() in the class GameView. When the last checkpoint has been passed by the mob, updatePosition() will return false. This means that the mob has survived to the ocean. The mob will be removed from the GameModel, the Player will lose one life, and a splash animation will be displayed.
+
+\subsubsection{Mob creation using MobFactory}
+
+The initiation of mob waves is handled by the singleton class MobFactory. A singleton is a class that only has one instance."""källa"""
+
+MobFactory is initiated when the player chooses a track to play from the progression route map. A new object of the class GameView is instantiated, and the method startTrack() is invoked. In method startTrack() the only instance of MobFactory is invoked with the method getInstance(). When initiated the context has to be sent to MobFactory, using the MobFactory method setContext(). This is needed to get the reference to the applications context, to be able to reach the resources that contains the XML-file initwaves.
+
+\clearpage
+
+When the method setContext() is called, the private method initWaves() is invoked. This method  reads the file initwaves, which is structured as in figure ~\ref{fig:codeExInitWavesXML}
+
+
+%---------
+%- Code snippet initiate waves
+%---------
+\begin{figure}[htb]
+
+\begin{small}
+\verbatiminput{code/initwavesXML.java}
+\end{small}
+
+\caption{Caption}
+\label{fig:codeExInitWavesXML}
+
+\end{figure}
+%---------
+
+\clearpage
+
+The file initwaves contains information about every wave for every track. The XML-code is interpreted by initWaves() as a number of String arrays. Each array represents all waves in one track. Each element in the array holds information about one specific mob wave: the mob type, the number of mobs and the health of these mobs. The information is in the form of a String, and the three different values are separated by the space delimiter.
+
+Starting from track one, initWaves() iterates until a break command is given. This occurs when the counter of the loop exceeds the number of tracks in the XML-file. Each track is identified with a dynamic String ("track\_1", "track\_2", \dots , "track\_n"), and is parsed using the methods getIdentifier() and getStringArray().
+
+The method getStringArray() returns a String array where each element represents an item in the XML-file. A loop iterates over this array and splits each element into three separate strings to determine which type the mob should be, how many to create and how much health each mob should have. These strings are handled as shown in the code snippet below (figure ~\ref{fig:codeExMobCreationWave}).
+
+%---------
+%- Code snippet mob creation
+%---------
+\begin{figure}[htb]
+
+\begin{small}
+\verbatiminput{code/mobCreationWave.java}
+\end{small}
+
+\caption{Caption}
+\label{fig:codeExMobCreationWave}
+
+\end{figure}
+%---------
+\clearpage
+When the String has been processed, a third loop creates the given number of mobs and stores them in an ArrayList. When all mobs are created the list of mobs is stored in another ArrayList to distinguish waves that belong to different tracks.
+
+%------
+%- Image wave data structure
+%------
+\begin{figure}[here]
+
+\begin{center}
+\includegraphics[scale=0.5]{pics/chapters/chapter4/moblist2}
+\end{center}
+
+\caption{Data structure of a wave object}
+\label{fig:dataStructureWave}
+
+\end{figure}
+%------
+
+MobFactory provides a method called getNextMob() that returns a Mob object. This method knows which track the player is currently playing, with help of the GameModel, and also knows which wave to send mobs from. 
+
+Since the getNextMob() is invoked continuously, a delay is implemented to make sure the mobs do not flood the game field completely. This is done by counting the number of times the method is invoked, only returning a new Mob when the method has been invoked a certain number of times.
+
+%---------
+%- Code snippet wavedelay
+%---------
+\begin{figure}[htb]
+
+\begin{small}
+\verbatiminput{code/waveDelay.java}
+\end{small}
+
+\caption{Caption}
+\label{fig:codeExWaveDelay}
+
+\end{figure}
+%---------
+
+\subsection{Projectiles}
+
+There are four types of projectiles, one for each tower type. They all extend the abstract class Projectile. When a tower shoots at a mob it creates a projectile that moves toward the mob and inflicts damage to it. The projectile has a specific mob as target and is angled toward the position of that mob. For all projectile types except the SplashProjectile this angle is updated every time updatePosition() is invoked to make sure it will not miss its target. The SplashProjectile does not update its angle after being launched, meaning it will land where the mob was when the projectile was launched.
+
+The projectile object has some important properties:
+
+\begin{itemize}
+\item {\bf mSpeed:} The speed of the projectile
+\item {\bf mDamage:} The damage that the projectile will inflict on its target
+\item {\bf mTarget:} A reference to the targeted Mob. Used to calculate the angle
+\end{itemize}
+
+Projectile contains the method updatePosition(), which updates the projectile's coordinates. The method is invoked by updateModel() in GameView. The new coordinates are calculated based on the old coordinates, the speed and the angle of the projectile.
+
+To determine whether the projectile has reached its target, Projectile has a method called hasCollided(). This method compares the coordinates of the projectile with those of the targeted Mob. If the distance between them is small enough they are considered to have collided, making the method return true. The GameView then removes the projectile from GameModel and the targeted Mob is inflicted with damage.
+
+All projectile types have unique images and methods specific for how they inflict damage. An example of such a method is how the SplashProjectile inflicts damage. This is done by looping though all mobs on the map to check their distance from the target coordinate. If they are within a specific range they are damaged. The damage inflicted is lower the further away from the center of the explosion the mob is.
+
+\subsection{Snowball}
+
+The movement of a real snowball is affected by several factors, such as friction and shape. However, in the virtual world of Eskimo Tower Defense it is assumed that none of those factors exist. Snowball objects are given the attributes speed on the x- and y-axis. The updatePosition() method is invoked every time GameModel is updated, with the latest sensor event from the accelerometer as argument. Every SensorEvent has an array of floats that contains the values read from the sensor. Figure ~\ref{fig:codeExUpdatePosition} is a very simplified example of how snowball objects handle accelerometer events.
+
+%----------
+%- Code snippet update position
+%----------
+\begin{figure}[htb]
+
+\begin{small}
+\verbatiminput{code/updatePosition.java}
+\end{small}
+
+\caption{Caption}
+\label{fig:codeExUpdatePosition}
+
+\end{figure}
+%----------
+
+In this case, the values represent the acceleration the phone is subjected to. If the phone is perfectly leveled the values of the x- and y-axis are 0.0 while the value of the z-axis is close to 9.82 (the gravitational acceleration). These values have the unit \begin{math} m/s^2 \end{math}, but the game field is measured in pixels. Some testing was required to find a meter-to-pixel ratio that gave the snowball the feeling of being controllable yet challenging.
+
+Collision detection is performed in the method getCollidedMobs(), which is invoked from updateModel() in GameView. Because the snowball can collide with several mobs at the same time, all existing mobs are checked for collision. Every mob that has collided with the snowball are added to a list, which is returned from the method. The mobs in the list have their health reduced by \begin{math}7\% \end{math} by GameView.
+
+Snowball objects have a number of charges that dictate how long they will survive. These charges are decreased both when the snowball collides with mobs and at regular time intervals. The radius of the snowball depends on the amount of charges. The radius is used both for collision detection and the drawing of snowballs on the screen. When the number of charges is reduced to zero, the snowball is removed from GameModel.

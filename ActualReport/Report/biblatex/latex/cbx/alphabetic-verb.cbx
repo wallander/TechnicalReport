@@ -1,0 +1,66 @@
+% $Id: alphabetic-verb.cbx,v 0.9a 2010/03/19 19:52:15 lehman beta $
+
+\ProvidesFile{alphabetic-verb.cbx}
+[\abx@cbxid $Id: alphabetic-verb.cbx,v 0.9a 2010/03/19 19:52:15 lehman beta $]
+
+\ExecuteBibliographyOptions{labelalpha,autocite=inline}
+
+\newbibmacro*{cite}{%
+  \printtext[bibhyperref]{%
+    \printfield{labelalpha}%
+    \printfield{extraalpha}}}
+
+\newbibmacro*{textcite}{%
+  \ifnameundef{labelname}
+    {}
+    {\printnames{labelname}\space}%
+  \bibopenbracket
+  \ifnumequal{\value{citecount}}{1}
+    {\usebibmacro{prenote}}
+    {}%
+  \usebibmacro{cite}}
+
+\DeclareCiteCommand{\cite}
+  {\bibopenbracket
+   \usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \ifnumgreater{\value{citecount}}{1}
+     {\bibopenbracket}
+     {}%
+   \usebibmacro{cite}}
+  {\bibclosebracket\multicitedelim}
+  {\usebibmacro{postnote}%
+   \bibclosebracket}
+
+\DeclareCiteCommand{\parencite}[\mkbibbrackets]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\footcitetext}[\mkbibfootnotetext]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\textcite}
+  {}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{textcite}}
+  {\bibclosebracket\multicitedelim}
+  {\usebibmacro{postnote}%
+   \bibclosebracket}
+
+\DeclareMultiCiteCommand{\parencites}[\mkbibbrackets]{\parencite}{\multicitedelim}
+
+\endinput

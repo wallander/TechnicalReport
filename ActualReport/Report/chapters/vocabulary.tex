@@ -1,0 +1,19 @@
+\section*{Vocabulary}
+
+\emph{\bf{Mob type:}} Each mob type has some unique characteristics. In the current implementation of the game there are four mob types, but more types can be added easily when the game is extended. Some mob types have special abilities; others are only characterized by the values of their standard attributes, such as health or armor. Visually a mob type is recognized by a unique look.
+
+\emph{\bf{Mob wave (or wave):}} A mob wave consists of one or more mobs that will enter the game as a group. All the mobs in the wave are of the same type. The mobs enter the game one by one and walk the path in a line. There is a few seconds between each wave.
+
+\emph{\bf{Tower:}} Towers are built to prevent mobs from reaching the end of the road. A tower can have different types; normal, splash, slow and air. They all have different graphical represenation like brown Eskimo, purple Eskimo, snowman and igloo.
+
+\emph{\bf{Tower level:}} A tower have several upgradable levels. For each level it is getting stronger. 
+
+\emph{\bf{Track:}} A track has a background image, a mob path, a set of mob waves and a current high score. The game has several tracks, which are placed along the progression route on the progression map. To complete a track the player must survive through all mob waves. Each time a mob manages to reach the end of the path without being killed, the player loses one life. If the player's lives reaches zero, the track is lost and the player has to replay it.
+
+\emph{\bf{Track progression map (or progression map):}} The progress map visualizes the player's progress in the game and lets him choose which track he wants to play. The progress map resembles a geographical map where each track is a geographical site placed along a route. The progress map is customized to match the theme of the game. In our implementation it depicts a route from the North Pole to The Sun.
+
+\emph{\bf{Progression route:}} The progression route is a fixed route that dictates in what order the tracks must be completed by the player. The route is visualized on the track progression map. Each track in the game is placed somewhere along the route. To be able to play a certain track the player must first complete any tracks before it. The route may be forked, in which case only one way leading to a track needs to be cleared in order to play that track. The player\'s current progression is visualized with icons.
+
+\emph{\bf{Player:}} The player is the physical person who is playing the game.
+
+\emph{\bf{OpenGL (Open Graphics Library):}} Is a programming interface to write applications with computer graphics. Often used to write 3 dimensional games.  

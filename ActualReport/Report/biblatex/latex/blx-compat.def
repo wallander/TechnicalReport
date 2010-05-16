@@ -1,0 +1,118 @@
+% $Id: blx-compat.def,v 0.9a 2010/03/19 19:52:15 lehman beta $
+
+\ProvidesFile{blx-compat.def}
+[\abx@rcsid $Id: blx-compat.def,v 0.9a 2010/03/19 19:52:15 lehman beta $
+ biblatex generic compatibility]
+
+% LaTeX
+
+\AtBeginDocument{%
+  \renewrobustcmd*{\bibliography}[1]{%
+    \blx@error
+      {'\string\bibliography' invalid at this point}
+      {'\string\bibliography' must be given in the
+       preamble.\MessageBreak I'm ignoring the command}}}
+
+\renewrobustcmd*{\bibliographystyle}[1]{%
+  \blx@error
+    {'\string\bibliographystyle' invalid}
+    {Use the package option 'style' instead.\MessageBreak
+     I'm ignoring the command}}
+
+% LaTeX, biblatex <0.9a
+
+\providecommand*{\thebibliography}{}
+\renewenvironment*{thebibliography}
+  {\list{}{%
+     \leftmargin\bibhang
+     \itemindent-\leftmargin
+     \itemsep\bibitemsep
+     \parsep\bibparsep}}
+  {\endlist}
+\newcommand*{\thebibitem}{\item}
+
+\defbibenvironment{bibliography}
+  {\thebibliography}
+  {\endthebibliography}
+  {\thebibitem}
+
+\newenvironment*{theshorthands}
+  {\list{\thefield{shorthand}}{%
+     \labelwidth\shorthandwidth
+     \labelsep\biblabelsep
+     \leftmargin\labelwidth
+     \advance\leftmargin\labelsep
+     \itemsep\bibitemsep
+     \parsep\bibparsep
+     \def\makelabel##1{##1\hss}}}
+  {\endlist}
+\newcommand*{\thelositem}{\item}
+
+\defbibenvironment{shorthands}
+  {\theshorthands}
+  {\endtheshorthands}
+  {\thelositem}
+
+% Standard classes
+
+\DeclareOption{openbib}{\ExecuteBibliographyOptions{block=par}}
+
+% Biblatex <0.8d
+
+\DeclareBibliographyOption{bibtex8}[true]{%
+  \ifstrequal{#1}{true}
+    {\ExecuteBibliographyOptions{backend=bibtex8}}
+    {\ExecuteBibliographyOptions{backend=bibtex}}}
+
+% memoir
+
+\ifdef\ifnobibintoc
+  {\newcommand*{\ifmemoirbibintoc}{\notbool{nobibintoc}}}
+  {\newcommand{\ifmemoirbibintoc}[2]{#2}}
+
+% KOMA-Script
+
+\newcommand{\ifkomabibtotoc}[2]{#2}
+\newcommand{\ifkomabibtotocnumbered}[2]{#2}
+
+\ifdef\ds@bibtotoc
+  {\DeclareOption{bibtotoc}{%
+     \let\ifkomabibtotoc=\@firstoftwo
+     \let\ifkomabibtotocnumbered=\@secondoftwo}
+   \DeclareOption{bibtotocnumbered}{%
+     \let\ifkomabibtotoc=\@firstoftwo
+     \let\ifkomabibtotocnumbered=\@firstoftwo}%
+   \DeclareOption{bibliography=totoc}{%
+     \let\ifkomabibtotoc=\@firstoftwo
+     \let\ifkomabibtotocnumbered=\@secondoftwo}
+   \DeclareOption{bibliography=nottotoc}{%
+     \let\ifkomabibtotoc=\@secondoftwo
+     \let\ifkomabibtotocnumbered=\@secondoftwo}
+   \DeclareOption{bibliography=totocnumbered}{%
+     \let\ifkomabibtotoc=\@firstoftwo
+     \let\ifkomabibtotocnumbered=\@firstoftwo}%
+   \DeclareOption{bibliography=oldstyle}{%
+     \ExecuteBibliographyOptions{block=space}}%
+   \DeclareOption{bibliography=openstyle}{%
+     \ExecuteBibliographyOptions{block=par}}%
+   \DeclareOption{toc=bib}{%
+     \let\ifkomabibtotoc=\@firstoftwo
+     \let\ifkomabibtotocnumbered=\@secondoftwo}%
+   \DeclareOption{toc=bibliography}{%
+     \let\ifkomabibtotoc=\@firstoftwo
+     \let\ifkomabibtotocnumbered=\@secondoftwo}%
+   \DeclareOption{toc=bibnumbered}{%
+     \let\ifkomabibtotoc=\@firstoftwo
+     \let\ifkomabibtotocnumbered=\@firstoftwo}%
+   \DeclareOption{toc=numberedbib}{%
+     \let\ifkomabibtotoc=\@firstoftwo
+     \let\ifkomabibtotocnumbered=\@firstoftwo}%
+   \DeclareOption{toc=bibliographynumbered}{%
+     \let\ifkomabibtotoc=\@firstoftwo
+     \let\ifkomabibtotocnumbered=\@firstoftwo}%
+   \DeclareOption{toc=numberedbibliography}{%
+     \let\ifkomabibtotoc=\@firstoftwo
+     \let\ifkomabibtotocnumbered=\@firstoftwo}}
+  {}
+
+\endinput
