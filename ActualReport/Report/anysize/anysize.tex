@@ -1,0 +1,86 @@
+% Documentation for the anysize-Styleoption
+\NeedsTeXFormat{LaTeX2e}
+
+\documentclass[a4paper]{article}
+\usepackage{anysize}
+\usepackage{ae}
+
+% Options for anysize
+\marginsize{3cm}{3cm}{3cm}{3cm}
+
+\newcommand{\anysize}{{\large a}{\small\bf n}{\sl y}{\Large\tt s}{\it i}{\sf\footnotesize z}e}
+
+\begin{document}
+
+\title{{\tt anysize.sty} ---  
+to set the margin sizes in  \LaTeX}
+
+\author{
+first version: Michael Salzenberg,\\
+conversion to \LaTeX2e{}: Thomas Esser,\\
+documentation: Dirk Hillbrecht\thanks{eMail--addresses:
+{\tt te@informatik.uni-hannover.de}, {\tt dh@chitec.de}}
+}
+\date{v1.0, Aug 13, 1994}
+\maketitle
+\thispagestyle{empty}
+
+\section{Overview}
+
+\anysize{} is a \LaTeX{} package set the papersize and the margins of
+a document. These settings are done by one simple command.
+
+\anysize{} is \LaTeX2e--compilant and does not run with the
+obsolete \LaTeX{} 2.09 format.
+
+Many thanks go to Michael Salzenberg, who made the first implementation of
+this style. He does not want to be bothered with the wide-area-publication
+of the style, so Thomas --- who converted it to \LaTeX2e{} --- and me,
+who documented it properly (I hope {\tt :-)}), maintain it now. Therefore,
+are only our email adresses are given.
+
+\section{Usage}
+
+\anysize{} is usually loaded by the \verb|\usepackage|--directive. The
+style knows options for defining the paper size ({\tt a4paper}, {\tt a5paper}
+etc.) and one additional option {\tt germanpar}, that changes the margins of
+the paragraphes in the document particulary.
+
+After inclusion of \anysize{}, there are two new commands available for the document preamble:
+
+\begin{itemize}
+\item \verb|\papersize{|{\it width}\verb|}{|{\it height}\verb|}|: sets the paper size. This command
+  should not be used anymore, as there are standardized style options for the standard paper sizes
+  to be passed through the \verb|\documentclass|--command in the header of the document. 
+\item \verb|\marginsize{|{\it left}\verb|}{|{\it right}\verb|}{|{\it 
+top}\verb|}{|{\it bottom}\verb|}|:
+        sets the margin sizes. This is the really interesting thing of the whole one. In two--sided
+        documents, left and right margin are those ones for the rectos. For the backs, they are swapped.
+\end{itemize}
+
+These are the default settings, as long as none of the above commands is given:
+$$\mbox{\begin{tabular}{lr}
+\multicolumn{2}{l}{paper size\footnotemark{}:} \\
+\hline
+width          & 21,0 cm       \\
+height           & 29,7 cm       \\
+\multicolumn{2}{l}{(DIN A4)}    \\
+\\
+\end{tabular}} 
+\hspace{5em}
+\mbox{\begin{tabular}{lr}
+\multicolumn{2}{l}{margin sizes:} \\ 
+\hline
+left           & 3,0 cm \\
+right          & 2,0 cm \\
+top            & 2,0 cm \\
+bottom           & 2,0 cm \\
+\end{tabular}}$$
+
+\footnotetext{only if there is no style option for the paper size}
+
+\end{document}
+%% Local Variables: ***
+%% mode: LaTeX
+%% TeX-command-default: LaTeX2e
+%% End: ***

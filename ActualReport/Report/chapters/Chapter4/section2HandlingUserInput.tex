@@ -1,0 +1,116 @@
+\section{Handling user input}
+
+Users have different means of interacting with the game. Touchscreen input is a very intuitive method of interaction on modern mobile devices, and it is used for all major user input in Eskimo Tower Defense. The physical interface of the mobile devices are also utilized to some extent, but users are not required to use the physical buttons to play the game. An new approach to user input in a game of the Tower Defense genre is the use of accelerometer sensors. In Eskimo Tower Defense, events from accelerometer sensors are included in the gameplay.
+
+\subsection{Touchscreen}
+
+One of the more important functions of GameView is the method that handles touch events; onTouchEvent(). This method is called automatically by the system every time the user is pressing, holding or releasing his fingers from the screen. 
+
+The method does different things depending on which state the game is in, what type of touch event is performed and where on the screen the event was generated. There are four game states: STATE\_RUNNING, STATE\_PAUSED, STATE\_GAMEOVER and STATE\_WIN.
+
+%----------------------------------
+%- Code snippet in-game pause menu
+%----------------------------------
+
+\begin{figure}[htb]
+
+\begin{small}
+\verbatiminput{code/in-gamePauseMenu.java}
+\end{small}
+
+\caption{Caption for in-game pause menu codesnippet...}
+\label{fig:codeExIn-GamePauseMenu}
+
+\end{figure}
+
+%----------------------------------
+
+The statement above compares the coordinate where the touch event occurred to the location of the pause button. If the statement is true, the pause button is pressed, and the state is changed to STATE\_PAUSED.
+
+If a track is lost, the GameView shows an in-game menu with the options "Restart", "Go to map" and "Exit". If the user choses "Exit", by touching and then lifting a finger from that button, the method onTouchEvent() is called. The method checks what state the game is in, and finds that it is STATE\_GAMEOVER. Then it checks what type of event that was invoked: the event is of type ACTION\_UP (a finger is lifted from the screen). Finally it compares the coordinates to the positions of the different menu options. Since the coordinate matches the exit button the method stops the game thread and exits the game.
+
+%---------
+%- Code snippet back to menu button pressed
+%---------
+\begin{figure}[htb]
+\begin{small}
+\verbatiminput{code/backToMenuButtonPressed.java}
+\end{small}
+\caption{Caption}
+\label{fig:codeExBackToMenuButtonPressed}
+\end{figure}
+%---------
+
+Depending on which state the game is currently in, different coordinates of the screen are checked. Game states are also connected to the onDraw() and updateModel() method. When for instance the state is STATE\_PAUSED, the updateModel() stops updating the game objects and the onDraw() draws the in-game pause menu.
+
+\subsection{Physical buttons}
+
+Every Android phone has some physical buttons. As a standard most phones have physical buttons for raising the volume, lowering the volume, going back, opening a menu and turning the device on and off (see figure ~\ref{fig:htcHeroButtons}). Some of the phones also have physical keyboards. These buttons are handled in the GameView class by the method onKeyDown(). The KeyEvent contains information about which button was pressed and this is checked with a case statement in the method (see figure ~\ref{fig:codeExOnKeyDown} ). It is possible to assign other actions to the buttons than what is normally intended. For example the volume down button could be assigned to pause the game.
+
+%-------
+%- Image physical buttons
+%-------
+\begin{figure} [here]
+\begin{center}
+\includegraphics[scale=0.6]{pics/chapters/chapter4/physicalbuttons}
+\end{center}
+\caption{Hardware buttons on a HTC Hero}
+\label{fig:htcHeroButtons}
+\end{figure}
+%-------
+
+\clearpage
+
+%----
+%- Code snippet
+%----
+\begin{figure}[here]
+\begin{small}
+\verbatiminput{code/onKeyDown.java}
+\end{small}
+\caption{Caption}
+\label{fig:codeExOnKeyDown}
+\end{figure}
+%----
+
+In this game both the menu and the back button pause the game, bringing the pause menu to the front by changing the GAME\_STATE to STATE\_PAUSED. Volume up and down adjust the volume of the in-game sound. Since different phones have different buttons, only the most common buttons are handled in Eskimo Tower Defense. It is also possible to navigate through the whole game by only using the touchscreen.
+
+\subsection{Accelerometer}
+
+The Android operating system provides access to the sensors of the phone. This was utilized during the development of Eskimo Tower Defense to access the accelerometer. The following pseudo code shows how the sensors are prepared for access:
+
+%----------
+%- Code snippet accelerometer
+%----------
+\begin{figure}[htb]
+
+\begin{small}
+\verbatiminput{code/accelerometerCode.java}
+\end{small}
+
+\caption{Caption}
+\label{fig:codeExAccelerometerCode}
+
+\end{figure}
+%----------
+
+An object of the SensorManager class provides access to all available sensors on the device. This object is received by invoking getSystemService() on the running Activity, with Context.SENSOR\_SERVICE as an argument. However, the number of sensors can differ a lot between different phone models. This must be handled whenever sensors are used. Otherwise, if a non-existing sensor is accessed, exceptions may occur and cause runtime errors.
+ 
+The method getSensorList() of the SensorManager returns a list of all available sensors of the type given as an argument. To determine whether an accelerometer sensor is available, this method is invoked with the argument Sensor.TYPE\_ACCELEROMETER. If the returned list is not empty, it contains at least one accelerometer sensor, and using that sensor is considered safe. The last piece of the code snippet in figure ~\ref{fig:codeExAccelerometerCode} registers a SensorEventListener to the accelerometer. This makes the SensorManager generate events that are caught and handled by the listener object.
+
+%----------
+%- Code snippet sensor event
+%----------
+\begin{figure}[htb]
+
+\begin{small}
+\verbatiminput{code/sensorEvent.java}
+\end{small}
+
+\caption{Caption}
+\label{fig:codeExAccelerometerSensorEvent}
+
+\end{figure}
+%----------
+
+The SensorEventListener interface has two methods that must be implemented: onAccuracyChanged() and onSensorChanged(). According to the Android API CITE""(Android, 2010), onAccuracyChanged() is invoked whenever the accuracy of a specific sensor is changed. However, this is not something that is considered in our software. onSensorChanged() is the relevant method in Eskimo Tower Defense. It is invoked every time the sensor\'s values are changed, which happens every time the acceleration on the phone is changed. To avoid being flooded by events generated from this sensor, the caught events are always saved. Only the last event is used when updating the game model. If game objects would be instantly updated when catching the events, performance would become an issue due to the amount of generated events.

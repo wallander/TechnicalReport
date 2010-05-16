@@ -1,0 +1,121 @@
+% $Id: verbose-note.cbx,v 0.9 2010/02/14 15:42:33 lehman beta $
+
+\ProvidesFile{verbose-note.cbx}
+[\abx@cbxid $Id: verbose-note.cbx,v 0.9 2010/02/14 15:42:33 lehman beta $]
+
+\ExecuteBibliographyOptions{citetracker=context,singletitle,autocite=footnote}
+\newbool{cbx:pageref}
+
+\DeclareFieldFormat{bibhyperlink}{%
+  \bibhyperlink{\thefield{entrykey}:\csuse{cbx@\iffootnote{f}{t}@\thefield{entrykey}}}{#1}}
+\DeclareFieldFormat{bibhypertarget}{%
+  \bibhypertarget{\thefield{entrykey}:\the\value{instcount}}{#1}}
+
+\DeclareBibliographyOption{pageref}[true]{%
+  \setbool{cbx:pageref}{#1}%
+  \ifbool{cbx:pageref}
+    {\ExecuteBibliographyOptions{pagetracker}}
+    {}}
+
+\newbibmacro*{cite}{%
+  \ifciteseen
+    {\iffieldundef{shorthand}
+       {\usebibmacro{cite:short}}
+       {\usebibmacro{cite:shorthand}}}
+    {\usebibmacro{cite:full}%
+     \usebibmacro{cite:save}}}
+
+\newbibmacro*{cite:save}{%
+  \csxdef{cbx@t@\thefield{entrykey}}{\the\value{instcount}}}
+
+\newbibmacro*{cite:full}{%
+  \printtext[bibhypertarget]{%
+    \usedriver
+      {\DeclareNameAlias{sortname}{default}}
+      {\thefield{entrytype}}}%
+  \usebibmacro{shorthandintro}}
+
+\newbibmacro*{cite:short}{%
+  \printnames{labelname}%
+  \setunit*{\addcomma\space}%
+  \printtext[bibhyperlink]{%
+    \printfield[citetitle]{labeltitle}}}
+
+\newbibmacro*{cite:shorthand}{%
+  \printtext[bibhyperlink]{\printfield{shorthand}}}
+
+\newbibmacro*{footcite}{%
+  \ifciteseen
+    {\iffieldundef{shorthand}
+       {\usebibmacro{footcite:note}}
+       {\usebibmacro{footcite:shorthand}}}
+    {\usebibmacro{footcite:full}%
+     \usebibmacro{footcite:save}}}
+
+\newbibmacro*{footcite:save}{%
+  \csxdef{cbx@f@\thefield{entrykey}}{\the\value{instcount}}%
+  \label{cbx@\the\value{instcount}}}
+
+\newbibmacro*{footcite:full}{%
+  \printtext[bibhypertarget]{%
+    \usedriver
+      {\DeclareNameAlias{sortname}{default}}
+      {\thefield{entrytype}}}%
+  \usebibmacro{shorthandintro}}
+
+\newbibmacro*{footcite:note}{%
+  \ifnameundef{labelname}
+    {\printfield{label}}
+    {\printnames{labelname}}%
+  \ifsingletitle
+    {}
+    {\setunit*{\addcomma\space}%
+     \printfield[title]{labeltitle}}%
+  \setunit*{\addcomma\space}%
+  \printtext{%
+    \bibstring{seenote}\addnbspace
+    \ref{cbx@\csuse{cbx@f@\thefield{entrykey}}}%
+    \ifbool{cbx:pageref}
+      {\ifsamepage{\the\value{instcount}}
+                  {\csuse{cbx@f@\thefield{entrykey}}}
+         {}
+	 {\addcomma\space\bibstring{page}\addnbspace
+	  \pageref{cbx@\csuse{cbx@f@\thefield{entrykey}}}}}
+      {}}}
+
+\newbibmacro*{footcite:shorthand}{%
+  \printtext[bibhyperlink]{\printfield{shorthand}}}
+
+\DeclareCiteCommand{\cite}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \iffootnote
+     {\usebibmacro{footcite}}
+     {\usebibmacro{cite}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\parencite}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \iffootnote
+     {\usebibmacro{footcite}}
+     {\usebibmacro{cite}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{footcite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\footcitetext}[\mkbibfootnotetext]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{footcite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\endinput

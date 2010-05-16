@@ -1,0 +1,27 @@
+Anysize is a simple package that can be used to set up the margins
+of a document.
+
+This package is obsolete. Use the package typearea to define your
+margins typographically correct. Use the package geometry or vmargin
+for everything else.
+
+The files of this distribution are:
+  README           the file that you are just reading
+  anysize.tex      source code for the documentation
+  anysize.sty      LaTeX package file
+
+Installation instructions for a TDS compiant system:
+
+1) process the documentation
+  latex anysize
+
+2) install the files (texmf stands for the root of your texmf system)
+  anysize.sty         -> texmf/tex/latex/misc
+  README, anysize.dvi -> texmf/doc/latex/anysize
+
+Legal stuff:
+
+All these files are hereby put into the public domain. Please change
+the name of the package if you make changes.
+
+Thoams Esser, te@informatik.uni-hannover.de, Nov. 2001

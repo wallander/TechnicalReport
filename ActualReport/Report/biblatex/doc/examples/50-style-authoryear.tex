@@ -1,0 +1,121 @@
+%
+% This file presents the `authoryear' style
+%
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=authoryear]{biblatex}
+\usepackage{hyperref}
+\bibliography{biblatex-examples}
+\setlength{\parindent}{0pt}
+% Some generic settings.
+\newcommand{\cmd}[1]{\texttt{\textbackslash #1}}
+\setlength{\parindent}{0pt}
+\begin{document}
+
+\section*{The \texttt{authoryear} style}
+
+This style implements the author-year citation scheme.
+
+\subsection*{Additional package options}
+
+\subsubsection*{The \texttt{dashed} option}
+
+By default, this style replaces recurrent authors/editors in the
+bibliography by a dash so that items by the same author or editor
+are visually grouped. This feature is controlled by the package
+option \texttt{dashed}. Setting \texttt{dashed=false} in the
+preamble will disable this feature. The default setting is
+\texttt{dashed=true}.
+
+\subsection*{\cmd{cite} examples}
+
+\cite{companion}
+
+\cite[59]{companion}
+
+\cite[see][]{companion}
+
+\cite[see][59--63]{companion}
+
+\subsection*{\cmd{parencite} examples}
+
+This is just filler text \parencite{companion}.
+
+This is just filler text \parencite[59]{companion}.
+
+This is just filler text \parencite[see][]{companion}.
+
+This is just filler text \parencite[see][59--63]{companion}.
+
+\subsection*{\cmd{parencite*} examples}
+
+\citeauthor{companion} show that this is just filler
+text \parencite*{companion}.
+
+\subsection*{\cmd{footcite} examples}
+
+% Even though the author-year scheme is usually employed in
+% conjuntion with in-text citations, it works just fine in
+% footnotes, too.
+
+This is just filler text.\footcite{companion}
+
+This is just filler text.\footcite[59]{companion}
+
+This is just filler text.\footcite[See][]{companion}
+
+This is just filler text.\footcite[See][59--63]{companion}
+
+\subsection*{\cmd{textcite} examples}
+
+\textcite{companion} show that this is just filler text.
+
+\textcite[59]{companion} show that this is just filler text.
+
+\textcite[see][]{companion} show that this is just filler text.
+
+\textcite[see][59--63]{companion} show that this is just filler text.
+
+\subsection*{\cmd{autocite} examples}
+
+% By default, the \autocite command works like \parencite.
+% The starred version works like \parencite*.
+
+This is just filler text \autocite{companion}.
+
+\citeauthor{companion} show that this is just filler
+text \autocite*{companion}.
+
+\subsection*{Multiple citations}
+
+% By default, a list of multiple citations is not sorted. You can
+% enable sorting by setting the `sortcites' package option.
+
+\cite{knuth:ct:c,aristotle:physics,knuth:ct:b,aristotle:poetics,aristotle:rhetoric,knuth:ct:d}
+
+\subsection*{Shorthand examples}
+
+% If an entry in the bib file includes a `shorthand' field, the
+% shorthand replaces the regular author-title citation.
+
+\cite{kant:kpv,kant:ku}
+
+\clearpage
+
+% The list of shorthands.
+
+\printshorthands
+
+% The list of references. Note that the year is printed after the
+% author or editor and that recurring author and editor names are
+% replaced by a dash unless the entry is the first one on the
+% current page or double page spread (depending on the setting of
+% the `pagetracker' package option). This style will implicitly set
+% `pagetracker=spread' at load time.
+
+\nocite{*}
+\printbibliography
+
+\end{document}

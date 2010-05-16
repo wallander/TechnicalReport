@@ -1,0 +1,26 @@
+% $Id: newzealand.lbx,v 0.9 2010/02/14 15:42:33 lehman beta $
+
+\ProvidesFile{newzealand.lbx}
+[\abx@lbxid $Id: newzealand.lbx,v 0.9 2010/02/14 15:42:33 lehman beta $]
+
+% STATUS OF THIS FILE
+% * complete
+% * peer review pending (see also british.lbx and english.lbx)
+
+\InheritBibliographyExtras{british}
+\DeclareBibliographyExtras{%
+  \protected\def\mkbibdatelong#1#2#3{%
+    \iffieldundef{#3}
+      {}
+      {\stripzeros{\thefield{#3}}%
+       \iffieldundef{#2}{}{\nobreakspace}}%
+    \iffieldundef{#2}
+      {}
+      {\mkbibmonth{\thefield{#2}}%
+       \iffieldundef{#1}{}{\space}}%
+    \thefield{#1}}%
+}
+
+\InheritBibliographyStrings{english}
+
+\endinput

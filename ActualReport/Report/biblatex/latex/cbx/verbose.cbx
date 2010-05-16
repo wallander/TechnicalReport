@@ -1,0 +1,66 @@
+% $Id: verbose.cbx,v 0.9 2010/02/14 15:42:33 lehman beta $
+
+\ProvidesFile{verbose.cbx}
+[\abx@cbxid $Id: verbose.cbx,v 0.9 2010/02/14 15:42:33 lehman beta $]
+
+\ExecuteBibliographyOptions{citetracker=context,autocite=footnote}
+\newcommand*{\cbx@resetcount}{0}
+
+\InitializeCitationStyle{\numgdef{\cbx@resetcount}{\cbx@resetcount+1}}
+\DeclareFieldFormat{bibhyperlink}{%
+  \bibhyperlink{\iffootnote{f}{t}:\cbx@resetcount:\thefield{entrykey}}{#1}}
+\DeclareFieldFormat{bibhypertarget}{%
+  \bibhypertarget{\iffootnote{f}{t}:\cbx@resetcount:\thefield{entrykey}}{#1}}
+
+\newbibmacro*{cite}{%
+  \ifciteseen
+    {\iffieldundef{shorthand}
+       {\usebibmacro{cite:short}}
+       {\usebibmacro{cite:shorthand}}}
+    {\usebibmacro{cite:full}}}
+
+\newbibmacro*{cite:full}{%
+  \printtext[bibhypertarget]{%
+    \usedriver
+      {\DeclareNameAlias{sortname}{default}}
+      {\thefield{entrytype}}}%
+  \usebibmacro{shorthandintro}}
+
+\newbibmacro*{cite:short}{%
+  \printnames{labelname}%
+  \setunit*{\addcomma\space}%
+  \printtext[bibhyperlink]{%
+    \printfield[citetitle]{labeltitle}}}
+
+\newbibmacro*{cite:shorthand}{%
+  \printtext[bibhyperlink]{\printfield{shorthand}}}
+
+\DeclareCiteCommand{\cite}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\parencite}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\footcitetext}[\mkbibfootnotetext]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\endinput
