@@ -1,0 +1,67 @@
+\input{chapters/header}
+
+\definecolor{lightblue}{rgb}{0.8,0.85,1}
+\lstset{backgroundcolor=\color{lightblue}}
+
+\begin{document}
+
+\nocite{*} % The command \nocite{*} causes all items in the database to be included in the references, regardless of whether or not they are cited in the paper.
+
+
+
+%\pagenumbering{roman}
+%for 1.5 spacing:
+%\renewcommand{\baselinestretch}{1.50}\normalsize
+
+%-------------------------------------------------
+%- Abstract
+%-------------------------------------------------
+%\input{chapters/abstract}
+%\newpage
+
+%-------------------------------------------------
+%- Table of contents
+%-------------------------------------------------
+%\tableofcontents
+
+%\newpage
+
+%-------------------------------------------------
+%- Vocabulary
+%-------------------------------------------------
+\input{chapters/vocabulary}
+
+%-------------------------------------------------
+%- Content
+%-------------------------------------------------
+\newpage
+\pagenumbering{arabic}
+%-------------------------------------
+%- Chapter 1
+%-------------------------------------
+\input{chapters/Chapter1/introduction}
+%-------------------------------------
+%- Chapter 2
+%-------------------------------------
+\input{chapters/Chapter2/theory}
+%-------------------------------------
+%- Chapter 3
+%-------------------------------------
+\input{chapters/Chapter3/method}
+%-------------------------------------
+%- Chapter 4
+%-------------------------------------
+\input{chapters/Chapter4/results}
+%-------------------------------------
+%- Chapter 5
+%-------------------------------------
+\input{chapters/Chapter5/discussion}
+%-------------------------------------
+
+%- Appendix A - List of figures
+% input{chapters/appendixA}
+
+%- Appendix B - UML
+% input{chapters/appendixB}
+
+\input{chapters/footer} 

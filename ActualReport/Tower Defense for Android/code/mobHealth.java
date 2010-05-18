@@ -1,0 +1,1 @@
+(255 * (double)m.getHealth() / (double)m.getMaxHealth())

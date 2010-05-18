@@ -1,0 +1,94 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Android(2010)]{Android}
+Android.
+\newblock Android api.
+\newblock \url{http://developer.android.com/}, June 2010.
+
+\bibitem[AndroidLib.com(2010)]{lupidLabs}
+AndroidLib.com.
+\newblock Robo defense.
+\newblock
+  \url{http://www.androlib.com/android.application.com-magicwach-rdefense-jpjz%
+.aspx}, May 2010.
+
+\bibitem[Canalys(2010)]{Canalys}
+Canalys.
+\newblock Majority of smart phones now have touch screens.
+\newblock \url{http://www.canalys.com/pr/2010/r2010021.html}, February 2010.
+
+\bibitem[Foundation(2010)]{Eclipse}
+Eclipse Foundation.
+\newblock Eclipse documentation.
+\newblock \url{http://www.eclipse.org/}, May 2010.
+
+\bibitem[Gamma(1995)]{designPatterns}
+Helm R Johnson R Vlissides~J Gamma, E.
+\newblock \emph{Design Patterns}.
+\newblock 1995.
+
+\bibitem[Git(2010)]{Git}
+Git.
+\newblock Git - fast version control system.
+\newblock \url{http://www.git-scm.com/}, June 2010.
+
+\bibitem[Green(2008)]{Green}
+Robert Green.
+\newblock Getting started in android game development.
+\newblock
+  \url{http://www.rbgrn.net/content/54-getting-started-android-game-developmen%
+t}, 2008.
+
+\bibitem[Green(2009)]{Green2}
+Robert Green.
+\newblock How to test android performance using fps.
+\newblock
+  \url{http://www.rbgrn.net/content/286-how-to-test-android-performance-using-%
+fps}, May 2009.
+
+\bibitem[Grossman(2007)]{Time}
+Lev Grossman.
+\newblock The best inventions of 2007.
+\newblock
+  \url{http://205.188.238.181/time/specials/2007/article/0,28804,1677329_16785%
+42_1677891,00.html}, November 2007.
+
+\bibitem[Michael~Wolff(2009)]{netGames}
+Derek Baker Nathaniel~Wice Michael~Wolff, Kelly~Maloni.
+\newblock \emph{Netgames: your guide to the games people play on the electronic
+  highway}.
+\newblock University of Virginia, 2009.
+
+\bibitem[Network(2010)]{Sun}
+Sun~Developer Network.
+\newblock Code conventions for the java programming language.
+\newblock \url{http://java.sun.com/docs/codeconv/}, May 2010.
+
+\bibitem[NinjaKiwi.com(2010)]{bloons}
+NinjaKiwi.com.
+\newblock Bloons tower defense 3.
+\newblock
+  \url{http://www.ninjakiwi.com/Games/Tower-Defense/Play/Bloons-Tower-Defense-%
+3.html}, May 2010.
+
+\bibitem[Scott(2010)]{elementTD}
+David Scott.
+\newblock Flash element td.
+\newblock \url{http://se.t45ol.com/spel/2951/flash-element-td.html}, May 2010.
+
+\bibitem[SQLite(2010)]{SQLite}
+SQLite.
+\newblock Sqlite documentation.
+\newblock \url{http://www.sqlite.org/}, June 2010.
+
+\bibitem[Thomas R.~Lindlof(2002)]{communication}
+Bryan C.~Taylor Thomas R.~Lindlof.
+\newblock \emph{Qualitative communication research methods}.
+\newblock 2002.
+
+\end{thebibliography}

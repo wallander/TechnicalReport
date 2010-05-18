@@ -1,0 +1,71 @@
+% Latex Code by Richard Socher, www.socher.org, permission granted to redistribute, if this line is left here ;)
+
+\documentclass[
+%   pdftex,
+    a4paper,
+    12pt,
+%   twoside,
+    oneside,
+    idxtotoc,
+    halfparskip,
+%    chapterprefix,
+]{scrbook}
+
+\usepackage{moreverb}
+
+%\usepackage{german}
+%\usepackage[german]{babel}
+%ü,ä,ö,ß 
+\usepackage[latin1]{inputenc}
+
+\usepackage{changepage}
+\usepackage[round]{natbib}
+
+\usepackage{longtable}
+\usepackage{tabularx}
+
+
+\usepackage{graphics}
+
+\usepackage{verbatim}
+
+\usepackage{listings}
+
+\usepackage{array}
+
+\usepackage[refpages]{gloss}
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{courier}
+
+\usepackage{rotating}
+
+\usepackage{color}
+
+\usepackage{comment}
+
+%\definecolor{LinkColor}{rgb}{0,0,0.5} % blue links in pdf?
+\definecolor{LinkColor}{rgb}{0,0,0}
+\usepackage[%
+    pdftitle={Bachelor Thesis},%
+    pdfauthor={Richard Socher},%
+    pdfcreator={LaTeX with hyperref},
+    pdfsubject={Automatic Extension of Feature-based Semantic Lexicons via Bootstrapping Algorithms},
+    pdfkeywords={semantic, bootstrapping}]{hyperref}
+\hypersetup{colorlinks=true,%
+    linkcolor=LinkColor,%
+    citecolor=LinkColor,%
+    filecolor=LinkColor,%
+    menucolor=LinkColor,%
+    pagecolor=LinkColor,%
+    urlcolor=LinkColor}
+
+
+
+
+\makegloss 
+% do this in shell to update:
+% directoryOfThesis> bibtex baa_main.gls

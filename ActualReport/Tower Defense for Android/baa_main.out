@@ -1,0 +1,62 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}
+\BOOKMARK [1][-]{section.1.1}{Purpose and delimitations}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{Theory}{}
+\BOOKMARK [1][-]{section.2.1}{Android architecture}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.1.1}{Data storage}{section.2.1}
+\BOOKMARK [2][-]{subsection.2.1.2}{Graphics}{section.2.1}
+\BOOKMARK [2][-]{subsection.2.1.3}{Sound}{section.2.1}
+\BOOKMARK [0][-]{chapter.3}{Method}{}
+\BOOKMARK [1][-]{section.3.1}{Interviews}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{Android development environment}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{Code convention}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{Git - A version control system}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{The resulting game: Eskimo Tower Defense}{}
+\BOOKMARK [1][-]{section.4.1}{Gameplay}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.1.1}{Progression map}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.2}{Game field}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.3}{Mobs}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.4}{Towers}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.5}{Projectiles}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.6}{Snowball}{section.4.1}
+\BOOKMARK [1][-]{section.4.2}{Code structure}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{Handling user input}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.3.1}{Touchscreen}{section.4.3}
+\BOOKMARK [2][-]{subsection.4.3.2}{Physical buttons}{section.4.3}
+\BOOKMARK [2][-]{subsection.4.3.3}{Accelerometer}{section.4.3}
+\BOOKMARK [1][-]{section.4.4}{Graphics}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.4.1}{XML layout}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.2}{Draw}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.3}{Animation}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.4}{Menus}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.5}{Tower placement}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.6}{Tower upgrade}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.7}{Mobs}{section.4.4}
+\BOOKMARK [1][-]{section.4.5}{Units}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.5.1}{Towers}{section.4.5}
+\BOOKMARK [2][-]{subsection.4.5.2}{Mobs}{section.4.5}
+\BOOKMARK [2][-]{subsection.4.5.3}{Projectiles}{section.4.5}
+\BOOKMARK [2][-]{subsection.4.5.4}{Snowball}{section.4.5}
+\BOOKMARK [1][-]{section.4.6}{Path}{chapter.4}
+\BOOKMARK [1][-]{section.4.7}{Money and highscore}{chapter.4}
+\BOOKMARK [0][-]{chapter.5}{Discussion}{}
+\BOOKMARK [1][-]{section.5.1}{Design choices}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.1.1}{Fixed path versus maze building}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.2}{Theme}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.3}{Projectile algorithm}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.4}{Waves}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.5}{Unique features}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.6}{User interface}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.7}{Animations}{section.5.1}
+\BOOKMARK [1][-]{section.5.2}{Game balance}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.2.1}{Towers}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.2}{Mob waves}{section.5.2}
+\BOOKMARK [1][-]{section.5.3}{Critical project review}{chapter.5}
+\BOOKMARK [1][-]{section.5.4}{Future work}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.4.1}{Public highscore}{section.5.4}
+\BOOKMARK [2][-]{subsection.5.4.2}{Cross-platform speed consistency}{section.5.4}
+\BOOKMARK [2][-]{subsection.5.4.3}{Sounds}{section.5.4}
+\BOOKMARK [2][-]{subsection.5.4.4}{Achievments}{section.5.4}
+\BOOKMARK [2][-]{subsection.5.4.5}{Snowball improvement}{section.5.4}
+\BOOKMARK [2][-]{subsection.5.4.6}{Additional special weapons}{section.5.4}
+\BOOKMARK [1][-]{section.5.5}{Conclusion}{chapter.5}
+\BOOKMARK [0][-]{section.5.5}{Bibliography}{}
