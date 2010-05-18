@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{16}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -57,6 +57,12 @@ Lev Grossman.
 \newblock
   \url{http://205.188.238.181/time/specials/2007/article/0,28804,1677329_16785%
 42_1677891,00.html}, November 2007.
+
+\bibitem[Kilgard(2000)]{OpenGL}
+Mark~J. Kilgard.
+\newblock All about opengl extensions.
+\newblock \url{http://www.opengl.org/resources/features/OGLextensions/}, July
+  2000.
 
 \bibitem[Michael~Wolff(2009)]{netGames}
 Derek Baker Nathaniel~Wice Michael~Wolff, Kelly~Maloni.

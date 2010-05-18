@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.4.29)  18 MAY 2010 19:51
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.4.29)  18 MAY 2010 22:46
 entering extended mode
 **baa_main.tex
 
@@ -351,6 +351,12 @@ Package color Info: Driver file: pdftex.def on input line 130.
 \CommentStream=\write4
 
 Excluding comment 'comment')
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\appendix\appendix.sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count123
+\c@@ppsavesec=\count124
+\c@@ppsaveapp=\count125
+)
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2009/09/10 v6.78u Hypertext links for LaTeX
 
@@ -373,8 +379,8 @@ O)
 Package: xcolor-patch 2008/09/08 xcolor patch
 ))
 \@linkdim=\dimen126
-\Hy@linkcounter=\count123
-\Hy@pagecounter=\count124
+\Hy@linkcounter=\count126
+\Hy@pagecounter=\count127
 
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2009/09/10 v6.78u Hyperref: PDFDocEncoding definition (HO)
@@ -433,7 +439,7 @@ Package ifluatex Info: LuaTeX not detected.
 )
 Package pdftexcmds Info: LuaTeX not detected on input line 144.
 )))
-\Fld@menulength=\count125
+\Fld@menulength=\count128
 \Field@Width=\dimen127
 \Fld@charsize=\dimen128
 \Field@toks=\toks29
@@ -448,21 +454,21 @@ Package hyperref Info: PDF/A mode OFF on input line 4376.
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\generic\oberdiek\atbegshi.sty"
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count126
-\c@Item=\count127
+\Hy@abspage=\count129
+\c@Item=\count130
 )
 *hyperref using default driver hpdftex*
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2009/09/10 v6.78u Hyperref driver for pdfTeX
-\Fld@listcount=\count128
+\Fld@listcount=\count131
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 64.
+Package hyperref Info: Option `colorlinks' set `true' on input line 66.
 
 
 Package hyperref Warning: Option `pagecolor' is not available anymore.
 
 \glsf@default=\write5
-Package gloss Info: Writing gloss file baa_main.gls.aux on input line 69.
+Package gloss Info: Writing gloss file baa_main.gls.aux on input line 71.
 )
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
 id\baa_main.aux")
@@ -483,18 +489,18 @@ LaTeX Font Info:    ... okay on input line 6.
 
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count129
+\scratchcounter=\count132
 \scratchdimen=\dimen129
 \scratchbox=\box36
-\nofMPsegments=\count130
-\nofMParguments=\count131
+\nofMPsegments=\count133
+\nofMParguments=\count134
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count132
+\MPscratchCnt=\count135
 \MPscratchDim=\dimen130
-\MPnumerator=\count133
+\MPnumerator=\count136
 \everyMPtoPDFconversion=\toks31
 )
-\c@lstlisting=\count134
+\c@lstlisting=\count137
 Package hyperref Info: Link coloring ON on input line 6.
  ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\hyperref\nameref.sty"
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -502,7 +508,7 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\oberdiek\refcount.sty"
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count135
+\c@section@level=\count138
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
@@ -515,9 +521,61 @@ id\baa_main.out")
 \AtBeginShipoutBox=\box37
 
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
-id\chapters/vocabulary.tex") [1
+id\chapters/abstract.tex")
+Overfull \hbox (1.61115pt too wide) in paragraph at lines 15--20
+\OT1/cmr/m/n/12 ren-skraftigt pa Android-marknaden. De funk-tioner som framst
+ tillampades un-der utveck-
+ []
+
+[1
 
 {C:/ProgramData/MiKTeX/2.8/pdftex/config/pdftex.map}]
+("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
+id\baa_main.toc"
+Class scrbook Info: You've told me to use the font selection of the element
+(scrbook)           `sectioning' that is an alias of element `disposition'
+(scrbook)            on input line 1.
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+ ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+ ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+Class scrbook Info: You've told me to use the font selection of the element
+(scrbook)           `sectioning' that is an alias of element `disposition'
+(scrbook)            on input line 3.
+Class scrbook Info: You've told me to use the font selection of the element
+(scrbook)           `sectioning' that is an alias of element `disposition'
+(scrbook)            on input line 8.
+Class scrbook Info: You've told me to use the font selection of the element
+(scrbook)           `sectioning' that is an alias of element `disposition'
+(scrbook)            on input line 21.
+ [2
+
+]
+Class scrbook Info: You've told me to use the font selection of the element
+(scrbook)           `sectioning' that is an alias of element `disposition'
+(scrbook)            on input line 50.
+Class scrbook Info: You've told me to use the font selection of the element
+(scrbook)           `sectioning' that is an alias of element `disposition'
+(scrbook)            on input line 71.
+Class scrbook Info: You've told me to use the font selection of the element
+(scrbook)           `sectioning' that is an alias of element `disposition'
+(scrbook)            on input line 72.
+Class scrbook Info: You've told me to use the font selection of the element
+(scrbook)           `sectioning' that is an alias of element `disposition'
+(scrbook)            on input line 79.
+Class scrbook Info: You've told me to use the font selection of the element
+(scrbook)           `sectioning' that is an alias of element `disposition'
+(scrbook)            on input line 82.
+
+[3])
+\tf@toc=\write7
+ [4]
+("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
+id\chapters/vocabulary.tex") [5]
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
 id\chapters/Chapter1/introduction.tex"
 Chapter 1.
@@ -537,21 +595,42 @@ l.18
 
 ])
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
-id\chapters/Chapter2/theory.tex" [2]
+id\chapters/Chapter2/theory.tex"pdfTeX warning (ext4): destination with the sam
+e identifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {Theory} [2]
 Chapter 2.
 
-<pics/chapters/chapter2/activity_lifecycle2.pdf, id=278, 546.9755pt x 713.57692
+<pics/chapters/chapter2/activity_lifecycle2.pdf, id=414, 546.9755pt x 713.57692
 pt>
 File: pics/chapters/chapter2/activity_lifecycle2.pdf Graphic file (type pdf)
  <use pics/chapters/chapter2/activity_lifecycle2.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.28 
+      [3
 
-] [4 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for A
-ndroid/pics/chapters/chapter2/activity_lifecycle2.pdf>] [5]
-<pics/chapters/chapter2/xmleditor.pdf, id=324, 1012.65326pt x 445.6088pt>
+]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.35 \subsection
+                {Data storage} [4 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Sl
+utrapport/Tower Defense for Android/pics/chapters/chapter2/activity_lifecycle2.
+pdf>]pdfTeX warning (ext4): destination with the same identifier (name{page.5})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.53 
+      [5]
+<pics/chapters/chapter2/xmleditor.pdf, id=460, 1012.65326pt x 445.6088pt>
 File: pics/chapters/chapter2/xmleditor.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter2/xmleditor.pdf>)
@@ -561,91 +640,71 @@ Slutrapport/Tower Defense for Android/pics/chapters/chapter2/xmleditor.pdf>]
 Chapter 3.
 [7
 
-]
-
-Package natbib Warning: Citation `Eclipse' on page 8 undefined on input line 26
-.
-
-<pics/chapters/chapter2/eclipse.pdf, id=352, 1028.48242pt x 548.12378pt>
+] <pics/chapters/chapter2/eclipse.pdf, id=489, 1028.48242pt x 548.12378pt>
 File: pics/chapters/chapter2/eclipse.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter2/eclipse.pdf> [8 <C:/Users/w1nston/Chalmers/Kandidat
 arbetet/Slutrapport/Tower Defense for Android/pics/chapters/chapter2/eclipse.pd
-f>] [9]
-<pics/chapters/chapter2/emulator.pdf, id=377, 607.60399pt x 430.66898pt>
+f>] <pics/chapters/chapter2/emulator.pdf, id=512, 607.60399pt x 430.66898pt>
 File: pics/chapters/chapter2/emulator.pdf Graphic file (type pdf)
 
-<use pics/chapters/chapter2/emulator.pdf> [10
-
- <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for Andro
-id/pics/chapters/chapter2/emulator.pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 79.
+<use pics/chapters/chapter2/emulator.pdf> [9 <C:/Users/w1nston/Chalmers/Kandida
+tarbetet/Slutrapport/Tower Defense for Android/pics/chapters/chapter2/emulator.
+pdf>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 78.
  ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 File: code/onDraw.java  (verbatim)
+ [10]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 104.
 
 
-Package natbib Warning: Citation `Sun' on page 11 undefined on input line 88.
-
-[11]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 105.
-
- ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\omscmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 105.
-)
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 104.
+ [11])
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
-id\chapters/Chapter4/results.tex" [12] [13]
+id\chapters/Chapter4/results.tex" [12]
 Chapter 4.
 
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
 id\chapters/Chapter4/section0Gameplay.tex"
-<pics/chapters/chapter4/progmapboth.pdf, id=421, 971.50858pt x 325.17484pt>
+<pics/chapters/chapter4/progmapboth.pdf, id=558, 971.50858pt x 325.17484pt>
 File: pics/chapters/chapter4/progmapboth.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/progmapboth.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14
+[13
 
-] <pics/chapters/chapter4/thegame.pdf, id=427, 600.82867pt x 359.89455pt>
+] <pics/chapters/chapter4/thegame.pdf, id=564, 600.82867pt x 359.89455pt>
 File: pics/chapters/chapter4/thegame.pdf Graphic file (type pdf)
 
-<use pics/chapters/chapter4/thegame.pdf> [15 <C:/Users/w1nston/Chalmers/Kandida
+<use pics/chapters/chapter4/thegame.pdf> [14 <C:/Users/w1nston/Chalmers/Kandida
 tarbetet/Slutrapport/Tower Defense for Android/pics/chapters/chapter4/progmapbo
 th.pdf> <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense fo
-r Android/pics/chapters/chapter4/thegame.pdf>] [16
+r Android/pics/chapters/chapter4/thegame.pdf>] [15
 
-] [17]
-LaTeX Font Info:    Try loading font information for U+msa on input line 106.
-
-("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 106.
-
-("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-))
+] [16])
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
 id\chapters/Chapter4/section1Structure.tex"
-<pics/chapters/chapter4/codestructure.pdf, id=494, 604.2575pt x 281.05pt>
+<pics/chapters/chapter4/codestructure.pdf, id=632, 604.2575pt x 281.05pt>
 File: pics/chapters/chapter4/codestructure.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/codestructure.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18] [19 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense f
+[17] [18 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense f
 or Android/pics/chapters/chapter4/codestructure.pdf>]
 File: code/GameThread.java  (verbatim)
 )
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
-id\chapters/Chapter4/section2HandlingUserInput.tex" [20]
+id\chapters/Chapter4/section2HandlingUserInput.tex" [19]
 File: code/in-gamePauseMenu.java  (verbatim)
 File: code/exitButtonIn-game.java  (verbatim)
 
@@ -654,26 +713,26 @@ Overfull \hbox (31.47847pt too wide) in paragraph at lines 37--37
  coordinates) {[] 
  []
 
-[21]
-<pics/chapters/chapter4/physicalbuttons.pdf, id=534, 237.13594pt x 106.89937pt>
+[20]
+<pics/chapters/chapter4/physicalbuttons.pdf, id=672, 237.13594pt x 106.89937pt>
 File: pics/chapters/chapter4/physicalbuttons.pdf Graphic file (type pdf)
-<use pics/chapters/chapter4/physicalbuttons.pdf> [22 <C:/Users/w1nston/Chalmers
+<use pics/chapters/chapter4/physicalbuttons.pdf> [21 <C:/Users/w1nston/Chalmers
 /Kandidatarbetet/Slutrapport/Tower Defense for Android/pics/chapters/chapter4/p
 hysicalbuttons.pdf>]
 File: code/onKeyDown.java  (verbatim)
 File: code/accelerometerCode.java  (verbatim)
- [23
+ [22
 
 ]
 File: code/sensorEvent.java  (verbatim)
 )
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
-id\chapters/Chapter4/section3Graphics.tex" [24]
-<pics/chapters/chapter4/xmllayout.pdf, id=563, 185.67067pt x 147.53317pt>
+id\chapters/Chapter4/section3Graphics.tex" [23]
+<pics/chapters/chapter4/xmllayout.pdf, id=701, 185.67067pt x 147.53317pt>
 File: pics/chapters/chapter4/xmllayout.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/xmllayout.pdf>
-<pics/chapters/chapter4/exitbuttonref.pdf, id=564, 305.10187pt x 95.3443pt>
+<pics/chapters/chapter4/exitbuttonref.pdf, id=702, 305.10187pt x 95.3443pt>
 File: pics/chapters/chapter4/exitbuttonref.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/exitbuttonref.pdf>
@@ -684,15 +743,15 @@ Overfull \hbox (5.1985pt too wide) in paragraph at lines 45--45
 s/android">[] 
  []
 
-[25 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for An
+[24 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for An
 droid/pics/chapters/chapter4/xmllayout.pdf> <C:/Users/w1nston/Chalmers/Kandidat
 arbetet/Slutrapport/Tower Defense for Android/pics/chapters/chapter4/exitbutton
 ref.pdf>]
-<pics/chapters/chapter4/exitbutton.pdf, id=592, 200.72491pt x 41.14864pt>
+<pics/chapters/chapter4/exitbutton.pdf, id=730, 200.72491pt x 41.14864pt>
 File: pics/chapters/chapter4/exitbutton.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/exitbutton.pdf>
-<pics/chapters/chapter4/showmoney.pdf, id=593, 451.63129pt x 157.56866pt>
+<pics/chapters/chapter4/showmoney.pdf, id=731, 451.63129pt x 157.56866pt>
 File: pics/chapters/chapter4/showmoney.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/showmoney.pdf>
@@ -700,54 +759,49 @@ Overfull \hbox (3.49922pt too wide) in paragraph at lines 82--83
  [] 
  []
 
-[26
+[25
 
  <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for Andro
 id/pics/chapters/chapter4/exitbutton.pdf> <C:/Users/w1nston/Chalmers/Kandidatar
 betet/Slutrapport/Tower Defense for Android/pics/chapters/chapter4/showmoney.pd
 f>]
 File: code/drawMoney.java  (verbatim)
- <pics/chapters/chapter4/splash2.pdf, id=622, 666.40668pt x 132.47794pt>
+ <pics/chapters/chapter4/splash2.pdf, id=763, 666.40668pt x 132.47794pt>
 File: pics/chapters/chapter4/splash2.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/splash2.pdf>
 File: code/drawWaterSplash.java  (verbatim)
- [27 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for A
-ndroid/pics/chapters/chapter4/splash2.pdf>] [28]
-<pics/chapters/chapter4/in-gamePauseMenu.pdf, id=644, 487.76126pt x 327.18137pt
+ [26 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for A
+ndroid/pics/chapters/chapter4/splash2.pdf>] [27]
+<pics/chapters/chapter4/in-gamePauseMenu.pdf, id=787, 487.76126pt x 327.18137pt
 >
 File: pics/chapters/chapter4/in-gamePauseMenu.pdf Graphic file (type pdf)
- <use pics/chapters/chapter4/in-gamePauseMenu.pdf> [29
+ <use pics/chapters/chapter4/in-gamePauseMenu.pdf> [28
 
  <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for Andro
 id/pics/chapters/chapter4/in-gamePauseMenu.pdf>]
-<pics/chapters/chapter4/buildertowerallthree.pdf, id=660, 485.75377pt x 981.545
+<pics/chapters/chapter4/buildertowerallthree.pdf, id=805, 485.75377pt x 981.545
 03pt>
 File: pics/chapters/chapter4/buildertowerallthree.pdf Graphic file (type pdf)
- <use pics/chapters/chapter4/buildertowerallthree.pdf> [30 <C:/Users/w1nston/Ch
+ <use pics/chapters/chapter4/buildertowerallthree.pdf> [29 <C:/Users/w1nston/Ch
 almers/Kandidatarbetet/Slutrapport/Tower Defense for Android/pics/chapters/chap
 ter4/buildertowerallthree.pdf>]
-<pics/chapters/chapter4/towerupgrade.pdf, id=679, 485.75377pt x 327.18137pt>
+<pics/chapters/chapter4/towerupgrade.pdf, id=823, 485.75377pt x 327.18137pt>
 File: pics/chapters/chapter4/towerupgrade.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/towerupgrade.pdf>
-<pics/chapters/chapter4/alltowers.pdf, id=680, 200.72491pt x 256.92789pt>
+<pics/chapters/chapter4/alltowers.pdf, id=825, 200.72491pt x 256.92789pt>
 File: pics/chapters/chapter4/alltowers.pdf Graphic file (type pdf)
 
-<use pics/chapters/chapter4/alltowers.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<pics/chapters/chapter4/mobs.pdf, id=681, 200.72491pt x 50.18117pt>
+<use pics/chapters/chapter4/alltowers.pdf> [30 <C:/Users/w1nston/Chalmers/Kandi
+datarbetet/Slutrapport/Tower Defense for Android/pics/chapters/chapter4/towerup
+grade.pdf> <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense
+ for Android/pics/chapters/chapter4/alltowers.pdf>]
+<pics/chapters/chapter4/mobs.pdf, id=873, 200.72491pt x 50.18117pt>
 File: pics/chapters/chapter4/mobs.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/mobs.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[31 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for An
-droid/pics/chapters/chapter4/towerupgrade.pdf>]
-<pics/chapters/chapter4/mobhealth.pdf, id=697, 197.73875pt x 53.19875pt>
+<pics/chapters/chapter4/mobhealth.pdf, id=876, 197.73875pt x 53.19875pt>
 File: pics/chapters/chapter4/mobhealth.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/mobhealth.pdf>
@@ -756,70 +810,125 @@ File: code/mobHealth.java  (verbatim)
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
 id\chapters/Chapter4/section4Units.tex"
 File: code/getDistance.java  (verbatim)
- [32 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for A
-ndroid/pics/chapters/chapter4/alltowers.pdf> <C:/Users/w1nston/Chalmers/Kandida
-tarbetet/Slutrapport/Tower Defense for Android/pics/chapters/chapter4/mobs.pdf>
- <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for Andro
-id/pics/chapters/chapter4/mobhealth.pdf>] [33] [34]
+ [31 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for A
+ndroid/pics/chapters/chapter4/mobs.pdf> <C:/Users/w1nston/Chalmers/Kandidatarbe
+tet/Slutrapport/Tower Defense for Android/pics/chapters/chapter4/mobhealth.pdf>
+] [32]
 File: code/initwavesXML.java  (verbatim)
+ [33]
 File: code/mobCreationWave.java  (verbatim)
-
-<pics/chapters/chapter4/moblist2.pdf, id=767, 523.9575pt x 258.9675pt>
+ [34]
+<pics/chapters/chapter4/moblist2.pdf, id=929, 523.9575pt x 258.9675pt>
 File: pics/chapters/chapter4/moblist2.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/moblist2.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: code/waveDelay.java  (verbatim)
-[35] [36 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense f
-or Android/pics/chapters/chapter4/moblist2.pdf>]
+ [35 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for A
+ndroid/pics/chapters/chapter4/moblist2.pdf>]
 File: code/updatePosition.java  (verbatim)
- [37])
+ [36])
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
-id\chapters/Chapter4/section5Path.tex"
+id\chapters/Chapter4/section5Path.tex" [37]
 File: code/initpathXML.java  (verbatim)
- [38]
-<pics/chapters/chapter4/pathlist2.pdf, id=804, 588.1975pt x 299.1175pt>
+
+<pics/chapters/chapter4/pathlist2.pdf, id=963, 588.1975pt x 299.1175pt>
 File: pics/chapters/chapter4/pathlist2.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter4/pathlist2.pdf>)
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
-id\chapters/Chapter4/section6MoneyHighscore.tex" [39 <C:/Users/w1nston/Chalmers
-/Kandidatarbetet/Slutrapport/Tower Defense for Android/pics/chapters/chapter4/p
-athlist2.pdf>]
+id\chapters/Chapter4/section6MoneyHighscore.tex" [38
+
+ <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for Andro
+id/pics/chapters/chapter4/pathlist2.pdf>]
 File: code/changeScore.java  (verbatim)
 File: code/readCreateFile.java  (verbatim)
 ))
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
-id\chapters/Chapter5/discussion.tex" [40]
+id\chapters/Chapter5/discussion.tex" [39]
 Chapter 5.
-[41
+[40
 
-] [42]
+] [41]
 File: code/interceptionCode.java  (verbatim)
 File: code/hoomingCode.java  (verbatim)
 
-Overfull \hbox (31.47847pt too wide) in paragraph at lines 60--60
+Overfull \hbox (31.47847pt too wide) in paragraph at lines 61--61
 []    \OT1/pcr/m/n/10.95 the angle between the projectile coordinate and the ta
 rget coordinate[] 
  []
 
-[43] [44] [45] [46]
-<pics/chapters/chapter5/frankingame.pdf, id=858, 1148.95251pt x 359.89455pt>
+[42] [43] [44] [45]
+<pics/chapters/chapter5/frankingame.pdf, id=1033, 1148.95251pt x 359.89455pt>
 File: pics/chapters/chapter5/frankingame.pdf Graphic file (type pdf)
 
 <use pics/chapters/chapter5/frankingame.pdf>
-Overfull \hbox (11.44191pt too wide) in paragraph at lines 135--136
+Overfull \hbox (11.44191pt too wide) in paragraph at lines 136--137
  [] 
  []
 
-[47 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for An
-droid/pics/chapters/chapter5/frankingame.pdf>] [48] [49])
+[46 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for An
+droid/pics/chapters/chapter5/frankingame.pdf>] [47] [48]) [49]
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
-id\chapters/footer.tex" [50]
+id\baa_main.lof" [50
 
-Package gloss Warning: Term `*' on page 51 not defined in glossary `default' on
+])
+\tf@lof=\write8
+ [51] [52
+
+]
+("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
+id\chapters/appendixA.tex"
+Appendix A.
+
+<pics/chapters/AppendixA/units_class_diagram.pdf, id=1123, 1046.91125pt x 1326.
+9575pt>
+File: pics/chapters/AppendixA/units_class_diagram.pdf Graphic file (type pdf)
+ <use pics/chapters/AppendixA/units_class_diagram.pdf> [53
+
+ <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for Andro
+id/pics/chapters/AppendixA/units_class_diagram.pdf>]
+<pics/chapters/AppendixA/uml1.pdf, id=1138, 785.29585pt x 1856.54602pt>
+File: pics/chapters/AppendixA/uml1.pdf Graphic file (type pdf)
+
+<use pics/chapters/AppendixA/uml1.pdf>
+
+LaTeX Warning: Float too large for page by 27.30086pt on input line 24.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[54 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutrapport/Tower Defense for An
+droid/pics/chapters/AppendixA/uml1.pdf>]
+<pics/chapters/AppendixA/uml2.pdf, id=1155, 1249.07657pt x 1830.9303pt>
+File: pics/chapters/AppendixA/uml2.pdf Graphic file (type pdf)
+
+<use pics/chapters/AppendixA/uml2.pdf>
+
+LaTeX Warning: Float too large for page by 18.33522pt on input line 36.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
+id\chapters/appendixB.tex" [55 <C:/Users/w1nston/Chalmers/Kandidatarbetet/Slutr
+apport/Tower Defense for Android/pics/chapters/AppendixA/uml2.pdf>]
+Appendix B.
+[56
+
+
+
+] [57] [58])
+("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
+id\chapters/appendixC.tex" [59]
+Appendix C.
+[60
+
+])
+("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
+id\chapters/footer.tex" [61]
+
+Package gloss Warning: Term `*' on page 62 not defined in glossary `default' on
  input line 4.
 
 No file baa_main.gls.bbl
@@ -844,37 +953,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--60
  []
 
 
-Underfull \hbox (badness 5711) in paragraph at lines 80--83
+Underfull \hbox (badness 1024) in paragraph at lines 62--66
+[]\OT1/cmr/m/n/12 Mark J. Kil-gard.  All about opengl ex-ten-sions.  [][]$\OT1/
+pcr/m/n/12 http : / / www . opengl . org /
+ []
+
+
+Underfull \hbox (badness 5711) in paragraph at lines 86--89
 []\OT1/cmr/m/n/12 David Scott.  Flash el-e-ment td.  [][]$\OT1/pcr/m/n/12 http 
 : / / se . t45ol . com / spel / 2951 /
  []
 
-)
+[62
 
-Package natbib Warning: There were undefined citations.
-
-[51
-
-]
+]) [63]
 ("C:\Users\w1nston\Chalmers\Kandidatarbetet\Slutrapport\Tower Defense for Andro
-id\baa_main.aux"
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+id\baa_main.aux")
 
 LaTeX Warning: There were undefined references.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 8958 strings out of 495285
- 137284 string characters out of 3179872
- 224453 words of memory out of 3000000
- 11720 multiletter control sequences out of 15000+200000
- 12104 words of font info for 45 fonts, out of 3000000 for 9000
+ 9163 strings out of 495285
+ 141695 string characters out of 3179872
+ 229323 words of memory out of 3000000
+ 11871 multiletter control sequences out of 15000+200000
+ 12710 words of font info for 47 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,9n,54p,1051b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,9n,54p,1125b,421s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.8/fonts/enc/dvips/fontname/8r.enc}<C:/Prog
 ram Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program 
@@ -885,9 +991,9 @@ x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files (x8
 6)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)
 /MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/M
 iKTeX 2.8/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on baa_main.pdf (52 pages, 12780875 bytes).
+Output written on baa_main.pdf (68 pages, 15593154 bytes).
 PDF statistics:
- 995 PDF objects out of 1000 (max. 8388607)
- 182 named destinations out of 1000 (max. 500000)
- 619 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1308 PDF objects out of 1440 (max. 8388607)
+ 210 named destinations out of 1000 (max. 500000)
+ 722 words of extra memory for PDF output out of 10000 (max. 10000000)
 

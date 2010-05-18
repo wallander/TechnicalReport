@@ -1,15 +1,79 @@
-\appendix
-\chapter{Appendix}
-\pagenumbering{roman}
 
-\section{UML}
+\chapter{Contribution Report}
 
-\begin{figure}[here]
+The team cooperated a lot during the process of development and the writing of the report. This means that very few sections of code or text were created by only one person. Everything in the report has been carefully reviewed by at least one of the other team members. The structure of the program, and all important design decisions were taken collectively, after discussions within the team.
 
-\begin{center}
 
-\includegraphics[scale=0.44]{pics/chapters/AppendixB/units_class_diagram}
+\section{Jonas Andersson}
 
-\end{center}
+My main responsibility was the balancing of the game. I was partly involved in researching and building the main structure on which we built our game upon. I implemented the fps-counter used to measure the performance on the game during development. I coded all of the projectiles and tested different algorithms for shooting at mobs. I coded the path for each map and made the mobs change direction to follow this. I balanced and partly coded the tower upgrades for all the different tower types. I created and balanced the different mob types and the different abilities they had. I did some testing on how to make the mobs animate by rotating them and later helping Ahmed to implement "canvas animation" for some mob types. I created all the waves and balanced their lives. I also made major balancing adjustments to make the game fun to play. This required a lot of testing and research of other tower defence games. I refactored major parts of MobFactory so the player could see the type of the next wave. I made the snowball melt slowly and take percentage damage to the mobs.
 
-\end{figure}
+I had the role of project manager during Mars. There I had the responsibility to check that work was in motion and to collect and submit the monthly report from all of the group members.
+
+In the report I wrote about Mobs, Projectiles and Towers under the Unit section. I also wrote Fixed path vs Maze building, Projectile algorithm, Waves, Unique features and the whole Game balance section. Under Future work I wrote all of the sub sections. I captured a lot of the screenshots of the game used in the report. I also extracted some of the small pictures used in the report based on these.
+
+I presented our project at the exhibition where all the groups presented their work. I also make the two posters for this occasion.
+
+
+\section{Daniel Arvidsson}
+
+In the beginning of the project, I spent most of my time discussing, deciding, argumenting around and justifying alot of the design decisions including aspects of the "look and feel" of the interface. I spent alot of time trying different Tower Defense games to figure out what we were going to include in our game and what we were going to to leave out. I also spent a lot of time on the interviews, both pre- and post-development. 
+I spent time working on whatever project currently needed my help, the canvas, graphics and projectile among other things. 
+
+I began work on the report a bit earlier, writing an early disposition which would form the basis for the final disposition. I wrote Introduction, Background, Delimitations, Purpose, Conclusion, Preface, Conclusion, Critique, Abstract and Method. I was also responsible for writing alot of the little sections discussing the contents of different sections. I also spent alot of time editing and improving upon the structure and flow of other people's texts.
+
+Together with Jonas Wallander I held our half-time presentation in front of the other students and supervisors half way through the project. 
+
+
+\section{Ahmed Chaban}
+
+My main responsibility was the interface of the game. I participated actively in discussions and planning throughout the project. I was partly involved in building the main structure of the first classes which we built our game upon. I implemented the flash-screen which is the first shown image on startup. I also implemented the main menu of the game and their actions and content. This was done by getting knowledge about XML. In the Progression map I coded everything visually and interactively like the tooltip, hoovered buttons and badges that indicates if you have completed a track or if a track is playable, or not. In-game I coded all the buttons, menus, tooltips, drawings and animations.
+
+Later I was also assigned with the responsibility for the graphics of the game. This forced me to also learn the graphical editing program Adobe Photoshop properly. Since I was alone assigned to this area, every image like the flash-screen, buttons, hoovered buttons, menus, tooltips, mobs, towers, tower upgrades, projectiles, animations, backgrounds, tracks, text, progression map, health symbol, money symbol and money shown after killing a mob was done by me. I also made some additional images for the report. 
+
+I was project manager, the last month in the project period. I had responsibility to distribute assignments around the report and to make sure that everyone made their job as intended.   
+
+In the report I wrote about XML, Draw, Menus, Tower placement, Tower upgrade and Mobs under the Graphics section. I also wrote Graphics under Theory, Physical buttons under Handling user input and Progression map under Gameplay. Under the Discussion section I wrote about User interface and Animations.
+
+I am also responsibly for the final presentation together with Disa Faith.
+
+
+\section{Disa Faith}
+
+My main responsibility was code maintainability. This included ensuring that code conventions were followed, that comments were sufficient, and that overly complicated algorithms were avoided. 
+
+I have participated actively in discussions and planning throughout the project, and have also been available to act as a sounding board for the other team members.
+
+I wrote big parts of the code for Tower and Projectile (including their subclasses), as well as MobFactory. I also implemented the pause functionality of the game.
+
+I created a detailed UML class diagram, visualizing the program structure. The first draft was created in the very beginning of the development process, and I continuously updated it as the program evolved. It helped giving us an overview of the project, and made it easier to explain its structure to others.
+
+In the report I wrote the sections about code convention, interviews and parts of the discussion (unique features, speed consistency). I also did extensive proof reading, and rephrasing of the report, together with the rest of the team, and assisted the others in writing other sections.
+
+I am responsible for the final report, together with Ahmed. This includes preparing slides and planning the speech, as well as doing the presentation.
+
+
+\section{Fredrik Persson}
+
+At an early stage of the project, I was assigned responsibility for the logic behind the game. I developed a lot of the classes that together make the game engine. Specifically, I worked a lot on the game model, how game objects are represented as data objects and how the game works in general. I'm behind a lot of the algorithms used to update the position of mobile units in the game. I also worked a lot on the code to clean it up, making it easier to read and adding comments. I implemented the snowball feature, using the accelerometer sensor. In general, I worked a lot on making the code efficient enough to reduce the risk of performance issues.
+
+When writing the report, I focused mainly on writing about the Android architecture and about using accelerometers. This was because that's what I worked with mostly during the development stage of the project. In addition to that, I participated greatly in the process of proof reading.
+
+In general, I helped the other team members a lot when they had issues with writing code or doing other technical tasks. 
+
+I participated in the project exhibition, showing our product to other students and explaining about how Android  and our game works.
+
+
+\section{Jonas Wallander}
+
+I was the first designated project manager, and was so from January until the last day in February. This meant that I had the main responsibility to make sure we had a project plan and making sure a monthly report were handed to the supervisor. The plan was constructed together within the group and different responsibilities were handed out to everyone.
+
+I created a repository on github.com and helped everyone to get started with version management with git, partly by creating a tutorial on how to install every needed component, and how to configure them, and also by showing in first hand.
+
+When developing the game, I had responsibility to enable the loading of waves and path coordinates, which meant a great deal of reading and writing to files (data storage). When this was implemented, I had gained a great deal of knowledge of how to store data on an Android device, which meant that I also implemented data storage features with the score functionality (and to some extent the unlocking of tracks). I also created a mock-up on the progression map and created the foundation for its background logic. Additionally I went on a searching spree to find music files on the Internet, to use in the game. I was also involved in implementing the sound into the game.
+
+Halfway through the project, me and Daniel Arvidsson did the half time presentation, where we presented how far we had come, and how our project plan was designed.
+
+In the report I wrote a lot on the sections about data storage, and on how the wave and the path objects worked in our game. I also wrote the first draft of the abstract. To be able to present a visually good report, I spent an enormous amount of time on learning LaTeX and the features this tool provides. Even though I spent a lot of time on learning LaTeX, I also spent a lot of time proof reading the entire report, several times. I also created some code snippets, and then parsed them plus every other code snippet made into the LaTeX document. I also parsed all the pictures into the LaTeX document and created figures which then easily could be referenced.
+
+

@@ -6,6 +6,8 @@ The Path in itself is not visible to the user, but the background image of the t
 
 The Path class is implemented as a singleton, so when the track is changed, the Path object is just reset and reused. The Path object is, just like the MobFactory object, first initialized when the player chooses a track from the progression map. The Path and MobFactory singletons are almost identical in their structure, but they handle different kinds of data.
 
+\clearpage
+
 When the path is initialized, information is read from an XML-file called initpaths. It is structured using one array for every track, where every item represents a checkpoint coordinate. Figure ~\ref{fig:codeExInitPathXML} shows the structure of initpath.
 
 %-----
@@ -17,7 +19,7 @@ When the path is initialized, information is read from an XML-file called initpa
 \verbatiminput{code/initpathXML.java}
 \end{small}
 
-\caption{Caption}
+\caption{Structure of initpath.xml}
 \label{fig:codeExInitPathXML}
 
 \end{figure}
@@ -34,7 +36,7 @@ The initiation contains two nested loops that iterate over every array tag and e
 \includegraphics[scale=0.5]{pics/chapters/chapter4/pathlist2}
 \end{center}
 
-\caption{Caption}
+\caption{Data structure of how a path is stored}
 \label{fig:dataStructurePath}
 \end{figure}
 %----
