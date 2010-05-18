@@ -1,0 +1,35 @@
+\section{Money and highscore}
+
+When a mob is killed the player is rewarded with money and points. The money is used to buy more towers as the game progresses and can thus establish a stronger defense. If the player fails to kill a mob, not only does he lose a life but he also misses the reward money. This makes it harder to defend against subsequent mobs.
+
+The points are added to the player's total score for the current track. The rewarded points are calculated based on the start health of the killed mobs, and decreased by a factor between 1-2 depending on how far the mob has travelled before it is killed (figure ~\ref{fig:codeExChangeScore}). This introduces some variation to the high score, ensuring players are rewarded for a more effective defense. With the distance included in the formula the highscore gets bigger if the player kills the mobs early.
+
+%----------
+%- Code snippet change score
+%----------
+\begin{figure}[htb]
+\begin{small}
+\verbatiminput{code/changeScore.java}
+\end{small}
+\caption{Caption}
+\label{fig:codeExChangeScore}
+\end{figure}
+%----------
+
+The highscore is managed by the singleton named Highscore. When first initiated, it tries to read from the text file tddata. If it is the first time the game starts, or if no track has been completed, the file does not exist, and an exception will be thrown. When it is caught, the text file tddata is created (figure ~\ref{fig:codeExReadCreateFile}).
+
+%----------
+%- Code snippet read or create file
+%----------
+\begin{figure}[htb]
+\begin{small}
+\verbatiminput{code/readCreateFile.java}
+\end{small}
+\caption{Caption}
+\label{fig:codeExReadCreateFile}
+\end{figure}
+%----------
+
+The read and write methods are used on several occasions. To reduce the total amount of code, the initializations of BufferedReader and BufferedWriter are done in separate methods.
+
+The method saveCurrentTrackScore() is invoked when a track is completed, saving the score to the text file tddata. The high score file is read in order to display each track's highscore on the progression map. The procedure also provides a way to determine if a certain track has been completed, since the highscore is zero only if the track has never been completed. This is used to unlocked the correct tracks on the progression map.

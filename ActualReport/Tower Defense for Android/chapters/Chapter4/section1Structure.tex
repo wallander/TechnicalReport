@@ -1,0 +1,51 @@
+\section{Code structure}
+
+At the first stage of development of this project, only one activity was used. The game launched directly into the game field, which was a canvas showing a bitmap image representing the ground. This worked well while experimenting with Android graphics. However, when menu development started a few weeks later, it became clear that more activities would be needed. A set of activities was created, where each activity represents a different screen in the game.
+
+The first activity created is called SplashActivity. This is used to display a loading screen for a few seconds. When the loading screen has been shown, a new activity called Menu is created. The SplashActivity is then finished and closed. The Menu activity is not finished every time a menu item is clicked. Instead it remains alive in the background, waiting to be shown after overlying activities are closed.
+
+From the main menu, four different activities can be started: MenuGame, MenuHelp, MenuOptions and MenuCredits. These activities, together with the activity Menu, are the foundation of the game. Figure ~\ref{fig:codestructureActivities} visualizes the flow between different activities: 
+
+%-----
+%- Image code structure
+%-----
+\begin{figure}[here]
+\begin{center}
+\includegraphics[scale=0.6]{pics/chapters/chapter4/codestructure}
+\end{center}
+\caption{Flowchart of activities in Eskimo Tower Defense}
+\label{fig:codestructureActivities}
+\end{figure}
+%-----
+
+Arrows in figure ~\ref{fig:codestructureActivities} indicate a transition between activities. All transitions except the one between SplashActivity and Menu are initiated by user actions, using in-game menu buttons. All navigation is done through in-game menus to give the user a more immersive experience.
+
+The actual game is launched from the MenuGame activity. Two different View classes are used to display either the game field or the progression map. Originally, only the game field View was shown in MenuGame. The progression map was implemented at a later stage of development, and changing the View of MenuGame seemed like the most simple solution. With this solution the transition from the progression map to the game field is performed by the different Views themselves (e.g. when a track is started from the progression map, the game field View is set as the visible View in MenuGame).
+
+The classes MobFactory, Path and Highscore are used to translate XML-files containing information about the tracks, to data stored in lists and arrays. This data is later read from other classes, such as GameView and GameModel.
+ 
+After selecting "Start" from the main menu and selecting a track on the progression map, the game starts. The game is managed and drawn by the GameView class. This class handles graphics, sound, the game thread, user input, sensor-initiated events like the ones originating from the accelerometer and the different game states (PAUSED, RUNNING, GAMEOVER, WIN).
+
+GameView does not contain any data about the units in the game. Instead, it contains a reference to GameModel which keeps track of all the data related to current states of the units in the game. The GameView's task is to translate the data of the game into bitmaps drawn onto the screen, and to handle user input. 
+
+In the constructor, the GameView initializes the GameThread class. This class is a thread that keeps the game running. It continuously invokes the updateModel(), updateSounds() and onDraw() methods in GameModel. This updates the GameModel and the sound states, and draws the screen according to the data in GameModel. The GameThread also includes methods for handling the thread itself, for example a method to terminate the thread when exiting the game.
+
+%--------------------------
+%- Code snippet GameThread
+%--------------------------
+\begin{figure}[htb]
+
+\begin{small}
+\verbatiminput{code/GameThread.java}
+\end{small}
+
+\caption{Caption for GameThread}
+\label{fig:codeExGameThread}
+\end{figure}
+%--------------------------
+
+The code in figure ~\ref{fig:codeExGameThread} is placed in the run() method of the GameThread. The while loop is ran until it is explicitly stopped from the GameView. The three method calls updateModel(), updateSounds() and onDraw() are placed inside a synchronized statement. This blocks the rest of the program to avoid interference from user input or other threads while a frame of the game is calculated and drawn to the screen. 
+
+The purpose of updateModel() is to update the model. The model is represented by the class GameModel that contains lists of all objects on the screen, player statistics, the path and other properties of the game. The updateModel() method performs all the calculations and algorithms that make the game work. It updates the positions of all units on the screen, creates new objects and sets the score according to what happens. 
+
+The GameView contains an extra initializing method called startTrack(), which is called from the constructor of GameView. Since the track can be restarted from within the game there must be a method other than the constructor to reset all values, so the game can be played again. If all this code would have been placed in the constructor, the game would have to reload the entire GameView to restart, now it only has to call startTrack().

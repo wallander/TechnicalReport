@@ -1,1 +1,0 @@
-int hpRatio = (int)(255* (double)m.getHealth() / (double)m.getMaxHealth());
